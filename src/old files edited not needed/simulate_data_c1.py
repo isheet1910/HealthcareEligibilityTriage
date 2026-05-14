@@ -337,7 +337,7 @@ def generate_last_check_history(
         if random.random() < 0.10:
             history_member_id = ""
 
-        days_ago = random.randint(0, 60)
+        days_ago = random.randint(0, 35)
 
         last_check_date = (
             datetime.today() - timedelta(days=days_ago)

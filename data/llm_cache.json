@@ -1,0 +1,8 @@
+{
+  "anthem gold plan": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  }
+}

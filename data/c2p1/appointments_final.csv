@@ -1,0 +1,251 @@
+patient_id,patient_name,dob,appointment_datetime,provider_name,insurance_on_file,member_id,normalized_payer,payer_code,confidence,method,status,reason
+P001,Allison Hill,1955-07-21,2026-05-13 09:00,Dr. Thomas Nguyen,Medicaid Illinois,MBR-39256,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P002,Brian Yang,1977-06-23,2026-05-13 16:00,Dr. Aisha Washington,UHC - 334455XY,MBR-13905,UnitedHealthcare Commercial,UHC_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P003,Javier Johnson,1955-03-30,2026-05-13 16:00,Dr. Aisha Washington,Tricare,MBR-95181,Tricare,TRICARE,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P004,Lance Hoffman,1989-02-01,2026-05-13 11:45,Dr. Aisha Washington,HCSC,MBR-10851,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm,Re-check needed,"Insurance changed: was MAGELLAN, now BCBS_IL_PPO"
+P005,Kimberly Robinson,1980-06-18,2026-05-13 14:30,Dr. Emily Chen,Medicare or Medicaid,MBR-54118,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P006,Sean Blake,1951-03-25,2026-05-13 09:30,Dr. Emily Chen,Cigna.,MBR-15695,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P007,Gina Moore,2005-07-02,2026-05-13 09:45,Dr. Sarah Patel,Anthem Blue Cross,MBR-92397,Anthem Blue Cross,ANTHEM,1.0,exact,Re-check needed,Last eligibility check was 42 days ago (limit: 30 days)
+P008,Ashley James,1964-10-16,2026-05-13 11:00,Dr. Sarah Patel,UnitedHealthcare Choice Plus,MBR-47930,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,"Insurance changed: was BCBS_FL, now UHC_CHOICE"
+P009,Lindsey Roman,1990-01-08,2026-05-13 09:45,Dr. Emily Chen,UnitedHealthcare Medicare Advantage,MBR-57819,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,Last eligibility check was 46 days ago (limit: 30 days)
+P010,Calvin Nielsen,1945-09-22,2026-05-13 11:30,Dr. Thomas Nguyen,HCSC,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm,Re-check needed,Last eligibility check was 56 days ago (limit: 30 days)
+P011,Sandra Montgomery,1999-01-01,2026-05-13 16:15,Dr. James Rodriguez,Molina Helthcare,MBR-45382,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,Last eligibility check was 53 days ago (limit: 30 days)
+P012,Corey Jones,1985-05-12,2026-05-13 11:30,Dr. Sarah Patel,Oscar Health,MBR-14207,Oscar Health,OSCAR,1.0,exact,Re-check needed,Last eligibility check was 56 days ago (limit: 30 days)
+P013,Dylan Miller,1956-03-16,2026-05-13 12:00,Dr. James Rodriguez,Centene / Ambetter,,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,No eligibility check on record for this patient
+P014,Jamie Chavez,1997-02-14,2026-05-13 11:45,Dr. Michael O'Brien,UHC,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P015,Jacob Clark,1958-07-13,2026-05-13 12:15,Dr. James Rodriguez,AmeriHealth,MBR-80644,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,"Insurance changed: was BCBS_TX_HMO, now AMERIHEALTH"
+P016,Melinda Jones,1983-07-29,2026-05-13 14:30,Dr. James Rodriguez,Humanna,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P017,Nicholas Martin,1966-03-09,2026-05-13 09:00,Dr. Sarah Patel,AmeriHealth,MBR-30969,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,Last eligibility check was 36 days ago (limit: 30 days)
+P018,Timothy Watts,1955-04-23,2026-05-13 09:45,Dr. Michael O'Brien,Molina Helthcare,MBR-71348,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,Last eligibility check was 36 days ago (limit: 30 days)
+P019,Sarah Parsons,1955-12-14,2026-05-13 08:00,Dr. Thomas Nguyen,Humana Medicare Advantage,,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,"Insurance changed: was CENTENE, now HUMANA_MA"
+P020,Renee Morales,1944-11-13,2026-05-13 09:30,Dr. Michael O'Brien,Blue Cross Blue Shield of Texas,MBR-10425,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy,Re-check needed,"Insurance changed: was CIGNA_COMM, now BCBS_TX_HMO"
+P021,Tommy Walter,1961-10-11,2026-05-13 16:15,Dr. Aisha Washington,WellCare Health Plans,,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was OSCAR, now WELLCARE"
+P022,Jonathan Wilkerson,1984-02-10,2026-05-13 16:15,Dr. James Rodriguez,Blue Cros Blu Sheild IL,MBR-31174,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 33 days ago (limit: 30 days)
+P023,Derek Wright,1978-07-25,2026-05-13 08:30,Dr. Michael O'Brien,WellCare Health Plans,MBR-57576,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was KAISER, now WELLCARE"
+P024,Nicole Patterson,1980-01-27,2026-05-13 11:00,Dr. James Rodriguez,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,"Insurance changed: was AETNA_MA, now MEDICARE_TFI"
+P025,Daniel Bright,1975-01-14,2026-05-13 15:00,Dr. Aisha Washington,BCBS / Aetna,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P026,Peter Callahan Jr.,1951-04-02,2026-05-13 16:15,Dr. Emily Chen,BCBS IL PPO,MBR-89507,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 44 days ago (limit: 30 days)
+P027,Jennifer Brown,1966-05-02,2026-05-13 16:15,Dr. Thomas Nguyen,Health Net,MBR-98039,Health Net Commercial,HEALTHNET,0.99,alias_exact,Re-check needed,"Insurance changed: was AETNA_MA, now HEALTHNET"
+P028,Julie King,1978-01-04,2026-05-13 16:45,Dr. Sarah Patel,Molina Helthcare,MBR-18392,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,No eligibility check on record for this patient
+P029,Alexandra Le,1986-10-03,2026-05-13 11:15,Dr. Sarah Patel,BCBSIL #MBR12345,MBR-92719,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P030,Nicole Mack,1963-07-07,2026-05-13 08:30,Dr. Sarah Patel,BCBS IL PPO,MBR-46500,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was MEDICARE_B, now BCBS_IL_PPO"
+P031,Jeffrey Chavez,2005-04-09,2026-05-13 16:15,Dr. Thomas Nguyen,Aetna.,,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,Last eligibility check was 37 days ago (limit: 30 days)
+P032,Michelle Stanton,1992-03-19,2026-05-13 11:45,Dr. Michael O'Brien,UnitedHealthcare Medicare Advantage,MBR-22704,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,Last eligibility check was 37 days ago (limit: 30 days)
+P033,Thomas Harrell,1960-09-02,2026-05-13 14:45,Dr. Michael O'Brien,see notes,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P034,Katie Gonzalez,1965-10-22,2026-05-13 09:00,Dr. Michael O'Brien,BCBS IL HMO,MBR-24322,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P035,Kimberly Osborne,1976-06-15,2026-05-13 16:45,Dr. James Rodriguez,Blue Cross Blue Shield of Illinois,MBR-46509,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was TRICARE, now BCBS_IL_PPO"
+P036,Linda Burns,1947-12-23,2026-05-13 15:00,Dr. Sarah Patel,Medicare,MBR-80855,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,"Insurance changed: was MERIDIAN, now MEDICARE_TFI"
+P037,Sherry Decker,1961-04-16,2026-05-13 11:15,Dr. Michael O'Brien,Humana,MBR-38016,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P038,David Bradley,1945-09-21,2026-05-13 10:45,Dr. Sarah Patel,CVS/Aetna,,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P039,John Jones,1992-02-14,2026-05-13 12:45,Dr. Thomas Nguyen,Molina Helthcare,,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,Last eligibility check was 55 days ago (limit: 30 days)
+P040,Beth Keller,2004-10-18,2026-05-13 15:15,Dr. James Rodriguez,Cigna.,MBR-17665,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P041,Deborah Brennan,1969-02-27,2026-05-13 08:30,Dr. Sarah Patel,Blue Cros Blu Sheild IL,MBR-72493,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 43 days ago (limit: 30 days)
+P042,Tanya Campos,1987-04-23,2026-05-13 10:00,Dr. Aisha Washington,BCBSIL #MBR12345,MBR-34356,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P043,Eric Carney,1984-08-02,2026-05-13 11:45,Dr. Sarah Patel,UnitedHealthcare,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,"Insurance changed: was MEDICARE_TFI, now UHC_COMM"
+P044,Steven Hayes,1957-03-26,2026-05-13 09:45,Dr. Thomas Nguyen,Blue Cross Blue Shield of Texas,MBR-78522,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy,Re-check needed,No eligibility check on record for this patient
+P045,George Chapman,1956-01-09,2026-05-13 11:30,Dr. James Rodriguez,WellCare Health Plans,MBR-27154,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,Last eligibility check was 57 days ago (limit: 30 days)
+P046,Adrienne Zimmerman,1944-05-15,2026-05-13 15:30,Dr. Sarah Patel,Medicaid Illinois,MBR-91416,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P047,Taylor Heath,1945-03-09,2026-05-13 09:15,Dr. Aisha Washington,Cigna HMO,MBR-55745,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,Last eligibility check was 57 days ago (limit: 30 days)
+P048,Diana Washington,1977-01-21,2026-05-13 13:30,Dr. James Rodriguez,Blue Cros Blu Sheild IL,MBR-81200,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was UHC_MA, now BCBS_IL_PPO"
+P049,Timothy Duncan,1972-07-12,2026-05-13 08:30,Dr. Thomas Nguyen,Medicaid Illinois,MBR-27601,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P050,John Russell,1946-10-13,2026-05-13 16:15,Dr. Emily Chen,BCBS IL PPO,MBR-37607,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P051,Jeffrey Henderson,1972-02-22,2026-05-13 12:45,Dr. Emily Chen,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,"Insurance changed: was CENTENE, now MEDICARE_TFI"
+P052,Amy Valdez,1984-05-02,2026-05-13 14:30,Dr. Sarah Patel,Blue Cross Blue Shield of Texas,MBR-27146,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy,Re-check needed,"Insurance changed: was CVS_AETNA, now BCBS_TX_HMO"
+P053,James Morgan,1998-12-31,2026-05-13 10:45,Dr. Aisha Washington,,MBR-83519,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P054,Corey Herrera,1949-11-26,2026-05-13 09:15,Dr. Aisha Washington,UHC,MBR-58393,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P055,Donald Wright,2003-03-11,2026-05-13 14:15,Dr. Sarah Patel,BCBS IL PPO,MBR-15229,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was AMBETTER, now BCBS_IL_PPO"
+P056,Robert Chase,1947-01-10,2026-05-13 11:00,Dr. Emily Chen,Tricare,,Tricare,TRICARE,0.99,alias_exact,Re-check needed,"Insurance changed: was CVS_AETNA, now TRICARE"
+P057,Zachary Huff,2006-04-21,2026-05-13 10:15,Dr. James Rodriguez,Tricare,,Tricare,TRICARE,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P058,Paul Young,1968-01-08,2026-05-13 08:15,Dr. Thomas Nguyen,Tricare,,Tricare,TRICARE,0.99,alias_exact,Re-check needed,Last eligibility check was 36 days ago (limit: 30 days)
+P059,Mr. James Brown,1966-02-25,2026-05-13 11:30,Dr. James Rodriguez,Well Care,,WellCare Health Plans,WELLCARE,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P060,James House,1993-10-16,2026-05-13 15:15,Dr. James Rodriguez,WellCare Health Plans,,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was BCBS_FL, now WELLCARE"
+P061,Jay Bernard,2008-02-07,2026-05-13 11:15,Dr. Sarah Patel,Blue Cross Blue Shield of Illinois,MBR-62227,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 37 days ago (limit: 30 days)
+P062,Mary Tucker,1953-04-14,2026-05-13 12:30,Dr. Thomas Nguyen,Cigna.,MBR-99065,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P063,Wayne Riley,1977-04-05,2026-05-13 13:00,Dr. Sarah Patel,Blue Cross Blue Shield of Texas,,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy,Re-check needed,No eligibility check on record for this patient
+P064,Erik Williams,1972-10-22,2026-05-13 08:00,Dr. Aisha Washington,United Health Care,MBR-51114,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,"Insurance changed: was CVS_AETNA, now UHC_COMM"
+P065,Sarah Moore,2005-09-29,2026-05-13 09:45,Dr. Aisha Washington,Aetna,MBR-15817,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,"Insurance changed: was CENTENE, now AETNA_COMM"
+P066,Sarah Jones,1944-12-27,2026-05-13 16:15,Dr. Emily Chen,Centene / Ambetter,MBR-97062,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,No eligibility check on record for this patient
+P067,Cynthia Wilson,2000-12-12,2026-05-13 09:30,Dr. Aisha Washington,Molina Healthcare,MBR-63528,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,Last eligibility check was 33 days ago (limit: 30 days)
+P068,Lauren Williams,1945-12-10,2026-05-13 16:15,Dr. James Rodriguez,Aetna PPO,MBR-59695,Aetna HMO,AETNA_HMO,0.78,fuzzy,Re-check needed,Last eligibility check was 55 days ago (limit: 30 days)
+P069,Kevin Mills,2003-12-21,2026-05-13 12:45,Dr. Aisha Washington,BCBS IL PPO,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 60 days ago (limit: 30 days)
+P070,Michael Edwards,1958-06-09,2026-05-13 14:30,Dr. Michael O'Brien,Aetna.,MBR-98555,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P071,Michael Evans,1961-11-17,2026-05-13 10:00,Dr. Emily Chen,Medicare,MBR-92960,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,Last eligibility check was 47 days ago (limit: 30 days)
+P072,Taylor Smith,1982-08-19,2026-05-13 11:30,Dr. James Rodriguez,UnitedHealthcare,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,Last eligibility check was 56 days ago (limit: 30 days)
+P073,Dr. Angel Lewis MD,2003-11-15,2026-05-13 11:45,Dr. Aisha Washington,Medicare or Medicaid,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P074,Benjamin Sanchez,1959-10-04,2026-05-13 11:45,Dr. Michael O'Brien,Aetna,MBR-29342,Aetna Commercial PPO,AETNA_COMM,0.78,llm,OK,Eligibility verified within required timeframe
+P075,Roy Warner,1981-12-27,2026-05-13 09:45,Dr. James Rodriguez,Molina Helthcare,MBR-77889,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,Last eligibility check was 52 days ago (limit: 30 days)
+P076,Dr. Kendra Contreras,1978-02-07,2026-05-13 11:00,Dr. Michael O'Brien,Molina Helthcare,MBR-70901,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,"Insurance changed: was CIGNA_HMO, now MOLINA"
+P077,Matthew Mcmillan,1949-07-02,2026-05-13 13:45,Dr. Aisha Washington,AmeriHealth,,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,Last eligibility check was 44 days ago (limit: 30 days)
+P078,Steve Newton,1950-12-10,2026-05-13 16:45,Dr. James Rodriguez,Cigna HMO,MBR-72216,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P079,Larry Robbins,1954-03-21,2026-05-13 12:45,Dr. Thomas Nguyen,self-pay,MBR-67654,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P080,Sarah Wagner,1957-06-14,2026-05-13 11:30,Dr. Emily Chen,Aetna / ID: 987654,MBR-80798,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P081,Sarah Davis,1969-03-10,2026-05-13 11:45,Dr. Thomas Nguyen,Medicare or Medicaid,MBR-38043,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P082,Amanda Cook,1949-04-07,2026-05-13 13:45,Dr. Michael O'Brien,Cigna,MBR-65069,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P083,Deborah Figueroa,1977-11-27,2026-05-13 14:45,Dr. Sarah Patel,Kaiser Permanente,,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,"Insurance changed: was UHC_MA, now KAISER"
+P084,Kristina Rodriguez,2004-09-03,2026-05-13 14:15,Dr. Michael O'Brien,Kaiser Permanente,MBR-67125,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,Last eligibility check was 40 days ago (limit: 30 days)
+P085,Stephanie Gardner,1997-02-26,2026-05-13 13:45,Dr. Thomas Nguyen,Cigna.,MBR-71261,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P086,Juan Jordan,1943-03-18,2026-05-13 08:45,Dr. Aisha Washington,Medicare or Medicaid,MBR-13552,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P087,Steven Flynn,1998-12-07,2026-05-13 10:45,Dr. James Rodriguez,CVS/Aetna,MBR-59689,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,Last eligibility check was 56 days ago (limit: 30 days)
+P088,Hunter Fleming,1985-09-30,2026-05-13 13:30,Dr. Michael O'Brien,Medicare,MBR-65255,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,Last eligibility check was 57 days ago (limit: 30 days)
+P089,Richard Henson,1968-01-07,2026-05-13 15:00,Dr. Thomas Nguyen,Blue Cross Blue Shield of Illinois,MBR-55870,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 39 days ago (limit: 30 days)
+P090,Nicole Frost,1956-06-22,2026-05-13 08:00,Dr. James Rodriguez,Cigna HMO,MBR-12671,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,Last eligibility check was 54 days ago (limit: 30 days)
+P091,Vanessa Cochran,2000-05-05,2026-05-13 10:45,Dr. Thomas Nguyen,Blue Cross Blue Shield of Texas,MBR-38569,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy,Re-check needed,Last eligibility check was 38 days ago (limit: 30 days)
+P092,Christopher Middleton,1993-08-09,2026-05-13 13:15,Dr. Aisha Washington,HCSC,MBR-25012,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P093,Rebekah Shields,1995-07-15,2026-05-13 12:00,Dr. Aisha Washington,Kaiser Permanente,MBR-50888,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,"Insurance changed: was MAGELLAN, now KAISER"
+P094,Christopher Haynes,1966-05-25,2026-05-13 14:15,Dr. Sarah Patel,WellCare Health Plans,MBR-92213,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,Last eligibility check was 50 days ago (limit: 30 days)
+P095,Shannon Walker,1995-12-07,2026-05-13 09:00,Dr. Emily Chen,United Health Care,MBR-96706,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,Last eligibility check was 41 days ago (limit: 30 days)
+P096,Hannah Hoover,1999-08-28,2026-05-13 13:00,Dr. Michael O'Brien,??,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P097,Alexander Lee,1962-09-13,2026-05-13 15:15,Dr. Michael O'Brien,Blue Cross Blue Shield of Florida,MBR-78386,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,Last eligibility check was 57 days ago (limit: 30 days)
+P098,Benjamin Ayala,1964-04-04,2026-05-13 16:45,Dr. Michael O'Brien,Cigna HMO,MBR-87656,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,"Insurance changed: was KAISER, now CIGNA_HMO"
+P099,Jennifer Zavala,1976-11-07,2026-05-13 09:30,Dr. Michael O'Brien,Kaiser Permanente,MBR-70910,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,Last eligibility check was 56 days ago (limit: 30 days)
+P100,Alexander Wiley,1958-02-20,2026-05-13 13:00,Dr. Michael O'Brien,BCBS IL PPO,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was MAGELLAN, now BCBS_IL_PPO"
+P101,Victor Baker,1947-09-28,2026-05-13 13:30,Dr. Emily Chen,Blue Cross Blue Shield of Florida,MBR-88139,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,No eligibility check on record for this patient
+P102,Haley Hartman,1970-01-22,2026-05-13 16:00,Dr. Aisha Washington,,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P103,Kayla Cruz,1979-08-08,2026-05-13 14:45,Dr. Aisha Washington,Humanna,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P104,Andrew Graham,1975-09-29,2026-05-13 15:00,Dr. Sarah Patel,WellCare Health Plans,MBR-63005,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was OSCAR, now WELLCARE"
+P105,Kimberly Ball,1990-11-08,2026-05-13 13:45,Dr. Aisha Washington,Molina Helthcare,MBR-65771,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,No eligibility check on record for this patient
+P106,Christina Reynolds,2004-12-07,2026-05-13 13:30,Dr. Thomas Nguyen,BCBSIL,MBR-50189,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P107,Erin Edwards,1998-01-26,2026-05-13 11:30,Dr. Sarah Patel,Aetna.,MBR-34267,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P108,Steven Hunter,1985-09-29,2026-05-13 12:30,Dr. Sarah Patel,Anthem Blue Cross,,Anthem Blue Cross,ANTHEM,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P109,James Phillips,1949-01-09,2026-05-13 10:30,Dr. Sarah Patel,Humana,MBR-26591,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P110,Maurice Gray,1991-04-10,2026-05-13 16:30,Dr. Thomas Nguyen,Humanna,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P111,Lisa Turner,1977-08-26,2026-05-13 09:00,Dr. Aisha Washington,Aetna PPO,MBR-72746,Aetna HMO,AETNA_HMO,0.78,fuzzy,Re-check needed,"Insurance changed: was CIGNA_HMO, now AETNA_HMO"
+P112,Elizabeth Clark,1993-11-01,2026-05-13 08:30,Dr. Michael O'Brien,Blue Cross Blue Shield of Illinois,MBR-18564,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 41 days ago (limit: 30 days)
+P113,Mary Marshall,1970-06-14,2026-05-13 08:15,Dr. James Rodriguez,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,"Insurance changed: was AMBETTER, now MEDICARE_TFI"
+P114,Kayla Leon,2005-09-05,2026-05-13 11:00,Dr. Aisha Washington,UnitedHealthcare Choice Plus,,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,Last eligibility check was 48 days ago (limit: 30 days)
+P115,Carolyn Miller,1975-06-10,2026-05-13 16:45,Dr. Michael O'Brien,AmeriHealth,,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,Last eligibility check was 33 days ago (limit: 30 days)
+P116,Lisa Davis,2005-02-23,2026-05-13 12:00,Dr. Aisha Washington,BCBS/UHC,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P117,Megan Walker,1953-11-30,2026-05-13 11:15,Dr. Emily Chen,Molina Helthcare,MBR-30585,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,"Insurance changed: was AMERIGROUP, now MOLINA"
+P118,Angel Riggs,1981-12-17,2026-05-13 09:15,Dr. Sarah Patel,UnitedHealthcare,MBR-87832,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,Last eligibility check was 58 days ago (limit: 30 days)
+P119,Angel Perry,1983-03-21,2026-05-13 11:30,Dr. Thomas Nguyen,UHC - 334455XY,MBR-69510,UnitedHealthcare Commercial,UHC_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P120,Michelle Cruz,1967-07-24,2026-05-13 12:15,Dr. Michael O'Brien,Blue Cross Blue Shield of Florida,MBR-39466,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,No eligibility check on record for this patient
+P121,Matthew Smith,1991-06-20,2026-05-13 10:00,Dr. Sarah Patel,Molina Healthcare,MBR-50319,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P122,Stacey Osborne,1955-04-04,2026-05-13 15:00,Dr. Michael O'Brien,United Health Care,MBR-62757,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,"Insurance changed: was HUMANA_COMM, now UHC_COMM"
+P123,Tyler Holmes,1943-10-13,2026-05-13 16:45,Dr. Michael O'Brien,Centene / Ambetter,MBR-15224,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,No eligibility check on record for this patient
+P124,Sylvia Martinez,1949-06-09,2026-05-13 12:00,Dr. Sarah Patel,Cigna,MBR-98381,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P125,Mary Travis,1980-11-19,2026-05-13 12:00,Dr. James Rodriguez,Blue Cross Blue Shield of Florida,MBR-95394,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,"Insurance changed: was IL_MEDICAID, now BCBS_TX_HMO"
+P126,Pedro Ramos,1995-10-29,2026-05-13 10:45,Dr. Thomas Nguyen,Aetna.,,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,"Insurance changed: was MOLINA, now AETNA_COMM"
+P127,Kathy Rivas,1977-08-24,2026-05-13 13:45,Dr. Emily Chen,Humana Medicare Advantage,MBR-23710,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,Last eligibility check was 55 days ago (limit: 30 days)
+P128,Christopher Hensley,1970-12-28,2026-05-13 14:45,Dr. Emily Chen,Molina Helthcare,MBR-62488,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,"Insurance changed: was MEDICARE_TFI, now MOLINA"
+P129,David Walsh,1992-06-23,2026-05-13 08:45,Dr. Sarah Patel,BCBS/UHC,MBR-52372,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P130,Kari Allen,1970-04-19,2026-05-13 14:00,Dr. Thomas Nguyen,Humana,,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P131,Dustin Nelson,1962-02-13,2026-05-13 11:30,Dr. Aisha Washington,Humana,,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P132,Angela Hernandez,1966-06-06,2026-05-13 11:30,Dr. Aisha Washington,Humanna,MBR-47752,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P133,Michelle Brown,1968-02-06,2026-05-13 09:00,Dr. Thomas Nguyen,WellCare Health Plans,MBR-41365,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,Last eligibility check was 58 days ago (limit: 30 days)
+P134,John Brown,1997-01-15,2026-05-13 16:00,Dr. Aisha Washington,BCBSIL,MBR-39451,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P135,Taylor Silva,1987-09-11,2026-05-13 15:00,Dr. Thomas Nguyen,Molina Healthcare,,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,Last eligibility check was 59 days ago (limit: 30 days)
+P136,Spencer Johnston,1972-10-27,2026-05-13 16:30,Dr. Michael O'Brien,Cigna HMO,,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,Last eligibility check was 55 days ago (limit: 30 days)
+P137,Guy Molina,1998-06-10,2026-05-13 15:15,Dr. Michael O'Brien,BCBS IL,MBR-88561,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was AETNA_MA, now BCBS_IL_PPO"
+P138,Sara Medina,1990-05-10,2026-05-13 09:30,Dr. Michael O'Brien,Aetna,MBR-76550,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P139,Lindsey Walker,1955-04-18,2026-05-13 12:30,Dr. Aisha Washington,UHC,MBR-96499,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P140,John Price,1985-11-17,2026-05-13 15:45,Dr. Emily Chen,Centene / Ambetter,MBR-81228,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,Last eligibility check was 49 days ago (limit: 30 days)
+P141,Jennifer Martin,1972-03-03,2026-05-13 11:15,Dr. Aisha Washington,,MBR-63841,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P142,Veronica Ferguson,2002-01-29,2026-05-13 15:45,Dr. Michael O'Brien,UHC,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P143,Justin Johnson,1984-02-07,2026-05-13 15:00,Dr. James Rodriguez,Medicaid Illinois,MBR-87356,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P144,Sean White,1958-01-25,2026-05-13 15:00,Dr. Aisha Washington,,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P145,Daniel Murphy,1992-03-01,2026-05-13 10:45,Dr. Thomas Nguyen,BCBS/UHC,,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P146,Diana Bean,1969-01-19,2026-05-13 12:30,Dr. Aisha Washington,??,MBR-95175,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P147,Bradley Smith,1977-01-26,2026-05-13 16:45,Dr. Emily Chen,UnitedHealthcare,MBR-73956,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,OK,Eligibility verified within required timeframe
+P148,Trevor Walker,1945-01-12,2026-05-13 09:15,Dr. Thomas Nguyen,Medicare,MBR-47667,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P149,Marissa Webster,2004-12-25,2026-05-13 14:00,Dr. Thomas Nguyen,WellCare Health Plans,MBR-23173,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,Last eligibility check was 39 days ago (limit: 30 days)
+P150,Ryan Howell,1956-08-06,2026-05-13 08:00,Dr. Emily Chen,Anthem Blue Cross,,Anthem Blue Cross,ANTHEM,1.0,exact,Re-check needed,Last eligibility check was 34 days ago (limit: 30 days)
+P151,Michael Elliott,1955-03-13,2026-05-13 14:15,Dr. James Rodriguez,Aetna PPO,MBR-84177,Aetna HMO,AETNA_HMO,0.78,fuzzy,Re-check needed,Last eligibility check was 60 days ago (limit: 30 days)
+P152,David Wood,1981-08-05,2026-05-13 10:15,Dr. Sarah Patel,Cigna HMO,MBR-60140,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,Last eligibility check was 33 days ago (limit: 30 days)
+P153,Nicole Wilson,1996-02-12,2026-05-13 15:15,Dr. James Rodriguez,Aetna,MBR-43289,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P154,Eric Lane,2003-07-29,2026-05-13 15:30,Dr. Thomas Nguyen,UnitedHealthcare Medicare Advantage,MBR-19681,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P155,Michael Rubio,1967-05-10,2026-05-13 12:45,Dr. Thomas Nguyen,Kaiser Permanente,MBR-49599,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,Last eligibility check was 39 days ago (limit: 30 days)
+P156,Christina Vargas,1996-11-18,2026-05-13 15:00,Dr. James Rodriguez,Molina Healthcare,MBR-57049,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,Last eligibility check was 44 days ago (limit: 30 days)
+P157,Ashley Barton,1998-03-24,2026-05-13 08:45,Dr. Emily Chen,Humana,MBR-99889,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P158,Renee Hogan,1978-11-16,2026-05-13 15:30,Dr. James Rodriguez,BCBS IL HMO,MBR-56179,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,Last eligibility check was 47 days ago (limit: 30 days)
+P159,Hannah Patterson,1965-07-31,2026-05-13 12:15,Dr. Thomas Nguyen,WellCare Health Plans,MBR-92242,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P160,Matthew Smith,1968-12-12,2026-05-13 15:00,Dr. Aisha Washington,self-pay,MBR-27224,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P161,Ashley Yu,1983-08-13,2026-05-13 13:45,Dr. James Rodriguez,Anthem Blue Cross,MBR-80701,Anthem Blue Cross,ANTHEM,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P162,Julia Hernandez,1952-05-07,2026-05-13 16:30,Dr. James Rodriguez,Molina Healthcare,MBR-73156,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P163,Tracie Nelson,1995-05-12,2026-05-13 13:00,Dr. Michael O'Brien,UnitedHealthcare Choice Plus,,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,Last eligibility check was 32 days ago (limit: 30 days)
+P164,Patricia Marshall,1996-07-21,2026-05-13 14:30,Dr. Sarah Patel,,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P165,Debra Christian,1996-11-22,2026-05-13 16:00,Dr. Michael O'Brien,Kaiser Permanente,MBR-98125,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P166,Diana Hayes,1991-06-08,2026-05-13 13:00,Dr. Thomas Nguyen,Molina Helthcare,MBR-13280,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,"Insurance changed: was HUMANA_MA, now MOLINA"
+P167,Leonard Gray,1942-04-26,2026-05-13 13:15,Dr. Thomas Nguyen,WellCare Health Plans,MBR-70852,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P168,Frederick Freeman MD,1957-12-11,2026-05-13 14:00,Dr. James Rodriguez,Humanna,MBR-14877,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P169,Spencer Haynes,1959-03-01,2026-05-13 09:00,Dr. James Rodriguez,CVS/Aetna,,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,Last eligibility check was 41 days ago (limit: 30 days)
+P170,Kellie Lee,1956-10-14,2026-05-13 13:45,Dr. Aisha Washington,Medicaid Illinois,MBR-30253,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,"Insurance changed: was BCBS_MA, now IL_MEDICAID"
+P171,Katherine Chang,1987-05-12,2026-05-13 15:45,Dr. Emily Chen,Health Net,MBR-58566,Health Net Commercial,HEALTHNET,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P172,Michael West,1941-07-15,2026-05-13 11:30,Dr. Sarah Patel,UnitedHealthcare Medicare Advantage,,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,Last eligibility check was 45 days ago (limit: 30 days)
+P173,Daniel Holt,1961-03-14,2026-05-13 08:45,Dr. Emily Chen,CVS/Aetna,MBR-26011,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,"Insurance changed: was AETNA_COMM, now CVS_AETNA"
+P174,Jackie Tran,1963-10-04,2026-05-13 09:15,Dr. Thomas Nguyen,??,MBR-12799,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P175,Patrick Rivera,1988-03-11,2026-05-13 11:15,Dr. Aisha Washington,BCBS IL PPO,MBR-82641,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P176,Eric Hall,1989-06-12,2026-05-13 11:30,Dr. James Rodriguez,Blue Cross Blue Shield of Florida,,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,No eligibility check on record for this patient
+P177,Bryan Herrera,1992-03-25,2026-05-13 10:15,Dr. Aisha Washington,Well Care,MBR-32871,WellCare Health Plans,WELLCARE,0.78,llm,Re-check needed,"Insurance changed: was BCBS_TX_PPO, now WELLCARE"
+P178,Cheryl Rodgers,1959-03-07,2026-05-13 10:00,Dr. Emily Chen,Centene / Ambetter,,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,"Insurance changed: was AMERIHEALTH, now AMBETTER"
+P179,Vanessa Warren,1959-08-15,2026-05-13 08:15,Dr. Emily Chen,Blue Cross Blue Shield of Illinois,MBR-65176,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was CIGNA_MA, now BCBS_IL_PPO"
+P180,Dr. Elizabeth Ward,1960-12-06,2026-05-13 15:45,Dr. Emily Chen,UnitedHealthcare Choice Plus,MBR-24293,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P181,Joseph Hill,2006-08-31,2026-05-13 08:30,Dr. Michael O'Brien,BCBS / Aetna,MBR-14082,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P182,Edgar Raymond,1983-10-09,2026-05-13 14:45,Dr. Thomas Nguyen,BCBSIL #MBR12345,MBR-68138,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was CIGNA_HMO, now BCBS_IL_PPO"
+P183,Katherine Salas,1979-06-06,2026-05-13 13:15,Dr. Sarah Patel,Molina Helthcare,MBR-91830,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,No eligibility check on record for this patient
+P184,John Peterson,2006-01-24,2026-05-13 13:45,Dr. Aisha Washington,AmeriHealth,MBR-69469,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,"Insurance changed: was AMBETTER, now AMERIHEALTH"
+P185,Todd Woods,1996-04-22,2026-05-13 09:00,Dr. Thomas Nguyen,BCBS IL PPO,MBR-82264,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 36 days ago (limit: 30 days)
+P186,John Ray,1987-01-28,2026-05-13 14:45,Dr. James Rodriguez,Medicaid Illinois,MBR-69441,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P187,Chase Hart,1961-01-14,2026-05-13 13:45,Dr. Emily Chen,Aetna.,MBR-59060,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,"Insurance changed: was WELLCARE, now AETNA_COMM"
+P188,David Grant,1968-09-07,2026-05-13 09:00,Dr. Sarah Patel,Anthem Blue Cross,MBR-22656,Anthem Blue Cross,ANTHEM,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P189,Rachel Perez,1975-12-04,2026-05-13 10:00,Dr. Aisha Washington,BCBSIL,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,Last eligibility check was 36 days ago (limit: 30 days)
+P190,Terry Evans,1980-05-30,2026-05-13 14:30,Dr. Thomas Nguyen,Humana,,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P191,Elizabeth Oliver DDS,1990-09-23,2026-05-13 12:30,Dr. Emily Chen,Aetna.,MBR-76507,Aetna Commercial PPO,AETNA_COMM,0.78,llm,Re-check needed,"Insurance changed: was CIGNA_HMO, now AETNA_COMM"
+P192,Phillip Garrett,1958-05-16,2026-05-13 11:00,Dr. Emily Chen,Blue Cross Blue Shield of Florida,,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P193,Brooke Thompson,1945-06-21,2026-05-13 11:45,Dr. Aisha Washington,Molina Helthcare,,Molina Healthcare,MOLINA,0.97,fuzzy,Re-check needed,"Insurance changed: was UHC_COMM, now MOLINA"
+P194,Jason Norris,1972-05-04,2026-05-13 08:30,Dr. Sarah Patel,UnitedHealthcare Medicare Advantage,MBR-50499,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P195,David Mann,1988-03-14,2026-05-13 08:15,Dr. James Rodriguez,,MBR-62531,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P196,Andrea Hall,1958-05-14,2026-05-13 08:00,Dr. Thomas Nguyen,Humana Medicare Advantage,MBR-59308,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,"Insurance changed: was CARESOURCE, now HUMANA_MA"
+P197,Lori Guerrero,2003-11-25,2026-05-13 10:30,Dr. Emily Chen,Humana,MBR-84395,,,0.0,llm_error,Unknown,Insurance on file could not be identified
+P198,Brian Walker,1950-07-03,2026-05-13 10:15,Dr. Aisha Washington,AmeriHealth,MBR-20693,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P199,Samantha Jones,1951-08-28,2026-05-13 15:45,Dr. Michael O'Brien,Medicare or Medicaid,MBR-77154,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P200,Linda Holloway,2003-01-19,2026-05-13 09:30,Dr. Thomas Nguyen,WellCare Health Plans,MBR-73783,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was ANTHEM_MA, now WELLCARE"
+P201,Caleb Barker,1987-12-24,2026-05-13 08:15,Dr. Michael O'Brien,UHC - 334455XY,,UnitedHealthcare Commercial,UHC_COMM,0.78,llm,Re-check needed,"Insurance changed: was BCBS_MA, now UHC_COMM"
+P202,Dillon Fernandez,1970-02-25,2026-05-13 12:15,Dr. James Rodriguez,BCBSIL,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P203,Andrew Reynolds,1962-04-19,2026-05-13 08:45,Dr. Thomas Nguyen,UnitedHealthcare Choice Plus,MBR-26932,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,Last eligibility check was 35 days ago (limit: 30 days)
+P204,Allison Perez,1986-04-01,2026-05-13 16:30,Dr. Sarah Patel,CVS/Aetna,MBR-15544,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P205,Laura Sampson,1992-05-28,2026-05-13 09:30,Dr. Aisha Washington,Tricare,MBR-63008,Tricare,TRICARE,0.99,alias_exact,Re-check needed,Last eligibility check was 50 days ago (limit: 30 days)
+P206,Debra Williams,1991-10-30,2026-05-13 12:00,Dr. Michael O'Brien,CVS/Aetna,MBR-52568,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,"Insurance changed: was BCBS_TX_PPO, now CVS_AETNA"
+P207,Joseph Ramos,1959-04-17,2026-05-13 13:00,Dr. Michael O'Brien,Oscar Health,,Oscar Health,OSCAR,1.0,exact,Re-check needed,"Insurance changed: was MAGELLAN, now OSCAR"
+P208,Kevin Walters,1973-10-28,2026-05-13 16:00,Dr. Michael O'Brien,UnitedHealthcare Choice Plus,,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact,Re-check needed,Last eligibility check was 60 days ago (limit: 30 days)
+P209,Julie Ortiz,1962-03-18,2026-05-13 13:15,Dr. Sarah Patel,BCBS IL HMO,MBR-24945,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,Last eligibility check was 60 days ago (limit: 30 days)
+P210,Shannon Rivera,1987-07-27,2026-05-13 13:30,Dr. Thomas Nguyen,UHC,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P211,Matthew Morales DDS,1942-11-11,2026-05-13 11:00,Dr. James Rodriguez,Blue Cross Blue Shield of Illinois,MBR-32740,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was HUMANA_COMM, now BCBS_IL_PPO"
+P212,Ernest Morris,2006-05-21,2026-05-13 10:45,Dr. Michael O'Brien,Health Net,,Health Net Commercial,HEALTHNET,0.99,alias_exact,Re-check needed,Last eligibility check was 40 days ago (limit: 30 days)
+P213,Sharon Bryan,1940-06-10,2026-05-13 13:30,Dr. James Rodriguez,WellCare Health Plans,MBR-71462,WellCare Health Plans,WELLCARE,1.0,exact,Re-check needed,"Insurance changed: was FIDELIS, now WELLCARE"
+P214,Kimberly Gutierrez,1953-02-16,2026-05-13 12:00,Dr. Emily Chen,UnitedHealthcare,MBR-50685,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,Last eligibility check was 46 days ago (limit: 30 days)
+P215,Lisa Jimenez,1970-06-11,2026-05-13 08:30,Dr. Emily Chen,United Health Care,MBR-21835,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,Last eligibility check was 44 days ago (limit: 30 days)
+P216,Christina Dunn,2003-06-29,2026-05-13 14:45,Dr. Aisha Washington,BCBS IL HMO,MBR-15376,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,"Insurance changed: was CIGNA_MA, now BCBS_IL_HMO"
+P217,Stanley Washington,1942-04-30,2026-05-13 13:45,Dr. Aisha Washington,Humana Medicare Advantage,MBR-18109,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P218,Lisa Allen,1951-02-21,2026-05-13 09:15,Dr. Sarah Patel,Blue Cros Blu Sheild IL,MBR-67377,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P219,Adam Russell,1955-08-27,2026-05-13 16:15,Dr. Emily Chen,Humana Medicare Advantage,MBR-47079,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P220,Susan Murray MD,1996-12-28,2026-05-13 08:30,Dr. Sarah Patel,Molina Healthcare,MBR-83133,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P221,Timothy Carter,1988-05-14,2026-05-13 12:15,Dr. Emily Chen,UnitedHealthcare Medicare Advantage,MBR-96980,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact,Re-check needed,Last eligibility check was 50 days ago (limit: 30 days)
+P222,Ruben Baird,1956-12-12,2026-05-13 12:45,Dr. James Rodriguez,Kaiser Permanente,MBR-21104,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,"Insurance changed: was IL_MEDICAID, now KAISER"
+P223,Charles Lee,1981-02-24,2026-05-13 13:15,Dr. Thomas Nguyen,Medicare,MBR-99838,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm,Re-check needed,Last eligibility check was 46 days ago (limit: 30 days)
+P224,Sherry Shields,1959-03-01,2026-05-13 14:30,Dr. Sarah Patel,Humana Medicare Advantage,MBR-33627,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,Last eligibility check was 48 days ago (limit: 30 days)
+P225,Sarah Morgan,1993-12-19,2026-05-13 15:15,Dr. James Rodriguez,Molina Healthcare,,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P226,Samantha Campbell,1960-09-05,2026-05-13 09:00,Dr. Thomas Nguyen,Kaiser Permanente,MBR-91006,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,"Insurance changed: was CIGNA_COMM, now KAISER"
+P227,Lauren Keller,1999-03-31,2026-05-13 10:15,Dr. James Rodriguez,HCSC,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm,Re-check needed,No eligibility check on record for this patient
+P228,Joshua Reed,1977-12-02,2026-05-13 15:00,Dr. Michael O'Brien,Molina Healthcare,MBR-41133,Molina Healthcare,MOLINA,1.0,exact,Re-check needed,"Insurance changed: was AMBETTER, now MOLINA"
+P229,Jamie Cantu,1999-07-17,2026-05-13 15:15,Dr. Aisha Washington,BCBS IL HMO,MBR-71474,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P230,Michael Armstrong,1956-04-04,2026-05-13 13:45,Dr. Michael O'Brien,United Health Care,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,"Insurance changed: was AMERIGROUP, now UHC_COMM"
+P231,Jennifer Flores,1972-07-19,2026-05-13 16:45,Dr. James Rodriguez,BCBS IL,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P232,Roberta Hughes,1985-07-12,2026-05-13 12:00,Dr. Thomas Nguyen,Medicaid Illinois,MBR-58655,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,Last eligibility check was 43 days ago (limit: 30 days)
+P233,Marissa Hernandez,2006-01-07,2026-05-13 16:00,Dr. Emily Chen,United Health Care,MBR-31012,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact,Re-check needed,No eligibility check on record for this patient
+P234,Jonathan Lawrence,1999-07-19,2026-05-13 10:45,Dr. Sarah Patel,Health Net,,Health Net Commercial,HEALTHNET,0.99,alias_exact,Re-check needed,"Insurance changed: was MEDICARE_B, now HEALTHNET"
+P235,Ryan Garcia,2002-04-27,2026-05-13 13:00,Dr. Michael O'Brien,Kaiser Permanente,MBR-75799,Kaiser Permanente,KAISER,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P236,Nathan Ortiz,1984-12-02,2026-05-13 09:30,Dr. James Rodriguez,Humana Medicare Advantage,MBR-22987,Humana Medicare Advantage,HUMANA_MA,1.0,exact,Re-check needed,Last eligibility check was 50 days ago (limit: 30 days)
+P237,Angela Harrington,1958-05-26,2026-05-13 10:15,Dr. Sarah Patel,BCBS IL,MBR-71925,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was AMERIHEALTH, now BCBS_IL_PPO"
+P238,Michael Santos,1998-04-29,2026-05-13 15:45,Dr. Aisha Washington,,MBR-20384,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P239,Michael Ferguson,2005-04-17,2026-05-13 11:15,Dr. Aisha Washington,AmeriHealth,,AmeriHealth Commercial,AMERIHEALTH,0.78,llm,Re-check needed,"Insurance changed: was HUMANA_COMM, now AMERIHEALTH"
+P240,Nathan Malone,1999-09-24,2026-05-13 09:30,Dr. James Rodriguez,CVS/Aetna,MBR-16258,CVS Health / Aetna,CVS_AETNA,0.78,llm,Re-check needed,Last eligibility check was 57 days ago (limit: 30 days)
+P241,Lisa Young,1986-12-08,2026-05-13 09:00,Dr. Michael O'Brien,Cigna HMO,MBR-12154,Cigna HMO,CIGNA_HMO,1.0,exact,Re-check needed,No eligibility check on record for this patient
+P242,Yolanda Francis,1969-11-23,2026-05-13 10:30,Dr. Michael O'Brien,Tricare,MBR-56244,Tricare,TRICARE,0.99,alias_exact,Re-check needed,Last eligibility check was 53 days ago (limit: 30 days)
+P243,Paige Padilla,1947-03-16,2026-05-13 10:00,Dr. Aisha Washington,unknown,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P244,Michael Berger,1943-06-30,2026-05-13 16:00,Dr. Michael O'Brien,Medicare or Medicaid,,,,0.1,ambiguous,Unknown,Insurance on file could not be identified
+P245,Anthony Howard,1969-09-02,2026-05-13 13:30,Dr. Thomas Nguyen,Medicaid Illinois,MBR-18855,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm,Re-check needed,"Insurance changed: was TRICARE, now IL_MEDICAID"
+P246,Joseph Knight,1994-04-18,2026-05-13 13:15,Dr. Sarah Patel,Aetna PPO,MBR-54374,Aetna HMO,AETNA_HMO,0.78,fuzzy,Re-check needed,Last eligibility check was 50 days ago (limit: 30 days)
+P247,Christopher Lynch,1966-05-25,2026-05-13 15:45,Dr. Thomas Nguyen,BCBS/UHC,MBR-27675,,,0.3,llm_unknown,Unknown,Insurance on file could not be identified
+P248,Cynthia Durham,1950-02-07,2026-05-13 15:00,Dr. Emily Chen,Centene / Ambetter,MBR-36144,Ambetter from Centene,AMBETTER,0.86,fuzzy,Re-check needed,"Insurance changed: was FL_MEDICAID, now AMBETTER"
+P249,Mark Stevens,1985-09-28,2026-05-13 12:45,Dr. Aisha Washington,BCBS IL HMO,MBR-14799,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact,Re-check needed,Last eligibility check was 61 days ago (limit: 30 days)
+P250,Robert Santana,1986-06-23,2026-05-13 12:30,Dr. Sarah Patel,BCBSIL,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact,Re-check needed,"Insurance changed: was TRICARE, now BCBS_IL_PPO"

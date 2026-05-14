@@ -260,8 +260,8 @@ def generate_last_check_history(
         else:
             member_id = f"MBR-{random.randint(10000, 99999)}"
 
-        # Random date in last 60 days
-        days_back = random.randint(0, 60)
+        # Random date in last 35 days
+        days_back = random.randint(0, 35)
         last_check_date = today - timedelta(days=days_back)
 
         # Result distribution

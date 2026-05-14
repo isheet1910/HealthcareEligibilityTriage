@@ -318,7 +318,7 @@ def generate_last_check_history(
  
     for patient_id in patients_with_history:
         # Random date in the last 60 days
-        days_ago       = random.randint(0, 60)
+        days_ago       = random.randint(0, 35)
         last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
  
         # Payer code

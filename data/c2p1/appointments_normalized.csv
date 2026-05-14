@@ -2,19 +2,19 @@ patient_id,patient_name,dob,appointment_datetime,provider_name,insurance_on_file
 P001,Allison Hill,1955-07-21,2026-05-13 09:00,Dr. Thomas Nguyen,Medicaid Illinois,MBR-39256,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm
 P002,Brian Yang,1977-06-23,2026-05-13 16:00,Dr. Aisha Washington,UHC - 334455XY,MBR-13905,UnitedHealthcare Commercial,UHC_COMM,0.78,llm
 P003,Javier Johnson,1955-03-30,2026-05-13 16:00,Dr. Aisha Washington,Tricare,MBR-95181,Tricare,TRICARE,0.99,alias_exact
-P004,Lance Hoffman,1989-02-01,2026-05-13 11:45,Dr. Aisha Washington,HCSC,MBR-10851,,,0.0,llm_error
+P004,Lance Hoffman,1989-02-01,2026-05-13 11:45,Dr. Aisha Washington,HCSC,MBR-10851,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm
 P005,Kimberly Robinson,1980-06-18,2026-05-13 14:30,Dr. Emily Chen,Medicare or Medicaid,MBR-54118,,,0.1,ambiguous
 P006,Sean Blake,1951-03-25,2026-05-13 09:30,Dr. Emily Chen,Cigna.,MBR-15695,,,0.3,llm_unknown
 P007,Gina Moore,2005-07-02,2026-05-13 09:45,Dr. Sarah Patel,Anthem Blue Cross,MBR-92397,Anthem Blue Cross,ANTHEM,1.0,exact
 P008,Ashley James,1964-10-16,2026-05-13 11:00,Dr. Sarah Patel,UnitedHealthcare Choice Plus,MBR-47930,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact
 P009,Lindsey Roman,1990-01-08,2026-05-13 09:45,Dr. Emily Chen,UnitedHealthcare Medicare Advantage,MBR-57819,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact
-P010,Calvin Nielsen,1945-09-22,2026-05-13 11:30,Dr. Thomas Nguyen,HCSC,,,,0.0,llm_error
+P010,Calvin Nielsen,1945-09-22,2026-05-13 11:30,Dr. Thomas Nguyen,HCSC,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm
 P011,Sandra Montgomery,1999-01-01,2026-05-13 16:15,Dr. James Rodriguez,Molina Helthcare,MBR-45382,Molina Healthcare,MOLINA,0.97,fuzzy
 P012,Corey Jones,1985-05-12,2026-05-13 11:30,Dr. Sarah Patel,Oscar Health,MBR-14207,Oscar Health,OSCAR,1.0,exact
 P013,Dylan Miller,1956-03-16,2026-05-13 12:00,Dr. James Rodriguez,Centene / Ambetter,,Ambetter from Centene,AMBETTER,0.86,fuzzy
 P014,Jamie Chavez,1997-02-14,2026-05-13 11:45,Dr. Michael O'Brien,UHC,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
 P015,Jacob Clark,1958-07-13,2026-05-13 12:15,Dr. James Rodriguez,AmeriHealth,MBR-80644,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
-P016,Melinda Jones,1983-07-29,2026-05-13 14:30,Dr. James Rodriguez,Humanna,,Humana Commercial PPO,HUMANA_COMM,0.78,llm
+P016,Melinda Jones,1983-07-29,2026-05-13 14:30,Dr. James Rodriguez,Humanna,,,,0.3,llm_unknown
 P017,Nicholas Martin,1966-03-09,2026-05-13 09:00,Dr. Sarah Patel,AmeriHealth,MBR-30969,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
 P018,Timothy Watts,1955-04-23,2026-05-13 09:45,Dr. Michael O'Brien,Molina Helthcare,MBR-71348,Molina Healthcare,MOLINA,0.97,fuzzy
 P019,Sarah Parsons,1955-12-14,2026-05-13 08:00,Dr. Thomas Nguyen,Humana Medicare Advantage,,Humana Medicare Advantage,HUMANA_MA,1.0,exact
@@ -22,20 +22,20 @@ P020,Renee Morales,1944-11-13,2026-05-13 09:30,Dr. Michael O'Brien,Blue Cross Bl
 P021,Tommy Walter,1961-10-11,2026-05-13 16:15,Dr. Aisha Washington,WellCare Health Plans,,WellCare Health Plans,WELLCARE,1.0,exact
 P022,Jonathan Wilkerson,1984-02-10,2026-05-13 16:15,Dr. James Rodriguez,Blue Cros Blu Sheild IL,MBR-31174,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P023,Derek Wright,1978-07-25,2026-05-13 08:30,Dr. Michael O'Brien,WellCare Health Plans,MBR-57576,WellCare Health Plans,WELLCARE,1.0,exact
-P024,Nicole Patterson,1980-01-27,2026-05-13 11:00,Dr. James Rodriguez,Medicare,,,,0.3,llm_unknown
+P024,Nicole Patterson,1980-01-27,2026-05-13 11:00,Dr. James Rodriguez,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P025,Daniel Bright,1975-01-14,2026-05-13 15:00,Dr. Aisha Washington,BCBS / Aetna,,,,0.3,llm_unknown
 P026,Peter Callahan Jr.,1951-04-02,2026-05-13 16:15,Dr. Emily Chen,BCBS IL PPO,MBR-89507,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P027,Jennifer Brown,1966-05-02,2026-05-13 16:15,Dr. Thomas Nguyen,Health Net,MBR-98039,Health Net Commercial,HEALTHNET,0.99,alias_exact
 P028,Julie King,1978-01-04,2026-05-13 16:45,Dr. Sarah Patel,Molina Helthcare,MBR-18392,Molina Healthcare,MOLINA,0.97,fuzzy
 P029,Alexandra Le,1986-10-03,2026-05-13 11:15,Dr. Sarah Patel,BCBSIL #MBR12345,MBR-92719,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P030,Nicole Mack,1963-07-07,2026-05-13 08:30,Dr. Sarah Patel,BCBS IL PPO,MBR-46500,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P031,Jeffrey Chavez,2005-04-09,2026-05-13 16:15,Dr. Thomas Nguyen,Aetna.,,,,0.3,llm_unknown
+P031,Jeffrey Chavez,2005-04-09,2026-05-13 16:15,Dr. Thomas Nguyen,Aetna.,,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P032,Michelle Stanton,1992-03-19,2026-05-13 11:45,Dr. Michael O'Brien,UnitedHealthcare Medicare Advantage,MBR-22704,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact
 P033,Thomas Harrell,1960-09-02,2026-05-13 14:45,Dr. Michael O'Brien,see notes,,,,0.1,ambiguous
 P034,Katie Gonzalez,1965-10-22,2026-05-13 09:00,Dr. Michael O'Brien,BCBS IL HMO,MBR-24322,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact
 P035,Kimberly Osborne,1976-06-15,2026-05-13 16:45,Dr. James Rodriguez,Blue Cross Blue Shield of Illinois,MBR-46509,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P036,Linda Burns,1947-12-23,2026-05-13 15:00,Dr. Sarah Patel,Medicare,MBR-80855,,,0.3,llm_unknown
-P037,Sherry Decker,1961-04-16,2026-05-13 11:15,Dr. Michael O'Brien,Humana,MBR-38016,,,0.3,llm_unknown
+P036,Linda Burns,1947-12-23,2026-05-13 15:00,Dr. Sarah Patel,Medicare,MBR-80855,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
+P037,Sherry Decker,1961-04-16,2026-05-13 11:15,Dr. Michael O'Brien,Humana,MBR-38016,,,0.0,llm_error
 P038,David Bradley,1945-09-21,2026-05-13 10:45,Dr. Sarah Patel,CVS/Aetna,,CVS Health / Aetna,CVS_AETNA,0.78,llm
 P039,John Jones,1992-02-14,2026-05-13 12:45,Dr. Thomas Nguyen,Molina Helthcare,,Molina Healthcare,MOLINA,0.97,fuzzy
 P040,Beth Keller,2004-10-18,2026-05-13 15:15,Dr. James Rodriguez,Cigna.,MBR-17665,,,0.3,llm_unknown
@@ -49,7 +49,7 @@ P047,Taylor Heath,1945-03-09,2026-05-13 09:15,Dr. Aisha Washington,Cigna HMO,MBR
 P048,Diana Washington,1977-01-21,2026-05-13 13:30,Dr. James Rodriguez,Blue Cros Blu Sheild IL,MBR-81200,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P049,Timothy Duncan,1972-07-12,2026-05-13 08:30,Dr. Thomas Nguyen,Medicaid Illinois,MBR-27601,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm
 P050,John Russell,1946-10-13,2026-05-13 16:15,Dr. Emily Chen,BCBS IL PPO,MBR-37607,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P051,Jeffrey Henderson,1972-02-22,2026-05-13 12:45,Dr. Emily Chen,Medicare,,,,0.3,llm_unknown
+P051,Jeffrey Henderson,1972-02-22,2026-05-13 12:45,Dr. Emily Chen,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P052,Amy Valdez,1984-05-02,2026-05-13 14:30,Dr. Sarah Patel,Blue Cross Blue Shield of Texas,MBR-27146,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy
 P053,James Morgan,1998-12-31,2026-05-13 10:45,Dr. Aisha Washington,,MBR-83519,,,0.1,ambiguous
 P054,Corey Herrera,1949-11-26,2026-05-13 09:15,Dr. Aisha Washington,UHC,MBR-58393,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
@@ -63,22 +63,22 @@ P061,Jay Bernard,2008-02-07,2026-05-13 11:15,Dr. Sarah Patel,Blue Cross Blue Shi
 P062,Mary Tucker,1953-04-14,2026-05-13 12:30,Dr. Thomas Nguyen,Cigna.,MBR-99065,,,0.3,llm_unknown
 P063,Wayne Riley,1977-04-05,2026-05-13 13:00,Dr. Sarah Patel,Blue Cross Blue Shield of Texas,,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy
 P064,Erik Williams,1972-10-22,2026-05-13 08:00,Dr. Aisha Washington,United Health Care,MBR-51114,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
-P065,Sarah Moore,2005-09-29,2026-05-13 09:45,Dr. Aisha Washington,Aetna,MBR-15817,,,0.3,llm_unknown
+P065,Sarah Moore,2005-09-29,2026-05-13 09:45,Dr. Aisha Washington,Aetna,MBR-15817,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P066,Sarah Jones,1944-12-27,2026-05-13 16:15,Dr. Emily Chen,Centene / Ambetter,MBR-97062,Ambetter from Centene,AMBETTER,0.86,fuzzy
 P067,Cynthia Wilson,2000-12-12,2026-05-13 09:30,Dr. Aisha Washington,Molina Healthcare,MBR-63528,Molina Healthcare,MOLINA,1.0,exact
 P068,Lauren Williams,1945-12-10,2026-05-13 16:15,Dr. James Rodriguez,Aetna PPO,MBR-59695,Aetna HMO,AETNA_HMO,0.78,fuzzy
 P069,Kevin Mills,2003-12-21,2026-05-13 12:45,Dr. Aisha Washington,BCBS IL PPO,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P070,Michael Edwards,1958-06-09,2026-05-13 14:30,Dr. Michael O'Brien,Aetna.,MBR-98555,,,0.3,llm_unknown
-P071,Michael Evans,1961-11-17,2026-05-13 10:00,Dr. Emily Chen,Medicare,MBR-92960,,,0.3,llm_unknown
+P070,Michael Edwards,1958-06-09,2026-05-13 14:30,Dr. Michael O'Brien,Aetna.,MBR-98555,Aetna Commercial PPO,AETNA_COMM,0.78,llm
+P071,Michael Evans,1961-11-17,2026-05-13 10:00,Dr. Emily Chen,Medicare,MBR-92960,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P072,Taylor Smith,1982-08-19,2026-05-13 11:30,Dr. James Rodriguez,UnitedHealthcare,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
 P073,Dr. Angel Lewis MD,2003-11-15,2026-05-13 11:45,Dr. Aisha Washington,Medicare or Medicaid,,,,0.1,ambiguous
-P074,Benjamin Sanchez,1959-10-04,2026-05-13 11:45,Dr. Michael O'Brien,Aetna,MBR-29342,,,0.3,llm_unknown
+P074,Benjamin Sanchez,1959-10-04,2026-05-13 11:45,Dr. Michael O'Brien,Aetna,MBR-29342,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P075,Roy Warner,1981-12-27,2026-05-13 09:45,Dr. James Rodriguez,Molina Helthcare,MBR-77889,Molina Healthcare,MOLINA,0.97,fuzzy
 P076,Dr. Kendra Contreras,1978-02-07,2026-05-13 11:00,Dr. Michael O'Brien,Molina Helthcare,MBR-70901,Molina Healthcare,MOLINA,0.97,fuzzy
 P077,Matthew Mcmillan,1949-07-02,2026-05-13 13:45,Dr. Aisha Washington,AmeriHealth,,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
 P078,Steve Newton,1950-12-10,2026-05-13 16:45,Dr. James Rodriguez,Cigna HMO,MBR-72216,Cigna HMO,CIGNA_HMO,1.0,exact
 P079,Larry Robbins,1954-03-21,2026-05-13 12:45,Dr. Thomas Nguyen,self-pay,MBR-67654,,,0.1,ambiguous
-P080,Sarah Wagner,1957-06-14,2026-05-13 11:30,Dr. Emily Chen,Aetna / ID: 987654,MBR-80798,,,0.3,llm_unknown
+P080,Sarah Wagner,1957-06-14,2026-05-13 11:30,Dr. Emily Chen,Aetna / ID: 987654,MBR-80798,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P081,Sarah Davis,1969-03-10,2026-05-13 11:45,Dr. Thomas Nguyen,Medicare or Medicaid,MBR-38043,,,0.1,ambiguous
 P082,Amanda Cook,1949-04-07,2026-05-13 13:45,Dr. Michael O'Brien,Cigna,MBR-65069,,,0.3,llm_unknown
 P083,Deborah Figueroa,1977-11-27,2026-05-13 14:45,Dr. Sarah Patel,Kaiser Permanente,,Kaiser Permanente,KAISER,1.0,exact
@@ -86,11 +86,11 @@ P084,Kristina Rodriguez,2004-09-03,2026-05-13 14:15,Dr. Michael O'Brien,Kaiser P
 P085,Stephanie Gardner,1997-02-26,2026-05-13 13:45,Dr. Thomas Nguyen,Cigna.,MBR-71261,,,0.3,llm_unknown
 P086,Juan Jordan,1943-03-18,2026-05-13 08:45,Dr. Aisha Washington,Medicare or Medicaid,MBR-13552,,,0.1,ambiguous
 P087,Steven Flynn,1998-12-07,2026-05-13 10:45,Dr. James Rodriguez,CVS/Aetna,MBR-59689,CVS Health / Aetna,CVS_AETNA,0.78,llm
-P088,Hunter Fleming,1985-09-30,2026-05-13 13:30,Dr. Michael O'Brien,Medicare,MBR-65255,,,0.3,llm_unknown
+P088,Hunter Fleming,1985-09-30,2026-05-13 13:30,Dr. Michael O'Brien,Medicare,MBR-65255,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P089,Richard Henson,1968-01-07,2026-05-13 15:00,Dr. Thomas Nguyen,Blue Cross Blue Shield of Illinois,MBR-55870,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P090,Nicole Frost,1956-06-22,2026-05-13 08:00,Dr. James Rodriguez,Cigna HMO,MBR-12671,Cigna HMO,CIGNA_HMO,1.0,exact
 P091,Vanessa Cochran,2000-05-05,2026-05-13 10:45,Dr. Thomas Nguyen,Blue Cross Blue Shield of Texas,MBR-38569,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.94,fuzzy
-P092,Christopher Middleton,1993-08-09,2026-05-13 13:15,Dr. Aisha Washington,HCSC,MBR-25012,,,0.0,llm_error
+P092,Christopher Middleton,1993-08-09,2026-05-13 13:15,Dr. Aisha Washington,HCSC,MBR-25012,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm
 P093,Rebekah Shields,1995-07-15,2026-05-13 12:00,Dr. Aisha Washington,Kaiser Permanente,MBR-50888,Kaiser Permanente,KAISER,1.0,exact
 P094,Christopher Haynes,1966-05-25,2026-05-13 14:15,Dr. Sarah Patel,WellCare Health Plans,MBR-92213,WellCare Health Plans,WELLCARE,1.0,exact
 P095,Shannon Walker,1995-12-07,2026-05-13 09:00,Dr. Emily Chen,United Health Care,MBR-96706,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
@@ -101,17 +101,17 @@ P099,Jennifer Zavala,1976-11-07,2026-05-13 09:30,Dr. Michael O'Brien,Kaiser Perm
 P100,Alexander Wiley,1958-02-20,2026-05-13 13:00,Dr. Michael O'Brien,BCBS IL PPO,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P101,Victor Baker,1947-09-28,2026-05-13 13:30,Dr. Emily Chen,Blue Cross Blue Shield of Florida,MBR-88139,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy
 P102,Haley Hartman,1970-01-22,2026-05-13 16:00,Dr. Aisha Washington,,,,,0.1,ambiguous
-P103,Kayla Cruz,1979-08-08,2026-05-13 14:45,Dr. Aisha Washington,Humanna,,Humana Commercial PPO,HUMANA_COMM,0.78,llm
+P103,Kayla Cruz,1979-08-08,2026-05-13 14:45,Dr. Aisha Washington,Humanna,,,,0.3,llm_unknown
 P104,Andrew Graham,1975-09-29,2026-05-13 15:00,Dr. Sarah Patel,WellCare Health Plans,MBR-63005,WellCare Health Plans,WELLCARE,1.0,exact
 P105,Kimberly Ball,1990-11-08,2026-05-13 13:45,Dr. Aisha Washington,Molina Helthcare,MBR-65771,Molina Healthcare,MOLINA,0.97,fuzzy
 P106,Christina Reynolds,2004-12-07,2026-05-13 13:30,Dr. Thomas Nguyen,BCBSIL,MBR-50189,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P107,Erin Edwards,1998-01-26,2026-05-13 11:30,Dr. Sarah Patel,Aetna.,MBR-34267,,,0.3,llm_unknown
+P107,Erin Edwards,1998-01-26,2026-05-13 11:30,Dr. Sarah Patel,Aetna.,MBR-34267,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P108,Steven Hunter,1985-09-29,2026-05-13 12:30,Dr. Sarah Patel,Anthem Blue Cross,,Anthem Blue Cross,ANTHEM,1.0,exact
-P109,James Phillips,1949-01-09,2026-05-13 10:30,Dr. Sarah Patel,Humana,MBR-26591,,,0.3,llm_unknown
-P110,Maurice Gray,1991-04-10,2026-05-13 16:30,Dr. Thomas Nguyen,Humanna,,Humana Commercial PPO,HUMANA_COMM,0.78,llm
+P109,James Phillips,1949-01-09,2026-05-13 10:30,Dr. Sarah Patel,Humana,MBR-26591,,,0.0,llm_error
+P110,Maurice Gray,1991-04-10,2026-05-13 16:30,Dr. Thomas Nguyen,Humanna,,,,0.3,llm_unknown
 P111,Lisa Turner,1977-08-26,2026-05-13 09:00,Dr. Aisha Washington,Aetna PPO,MBR-72746,Aetna HMO,AETNA_HMO,0.78,fuzzy
 P112,Elizabeth Clark,1993-11-01,2026-05-13 08:30,Dr. Michael O'Brien,Blue Cross Blue Shield of Illinois,MBR-18564,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P113,Mary Marshall,1970-06-14,2026-05-13 08:15,Dr. James Rodriguez,Medicare,,,,0.3,llm_unknown
+P113,Mary Marshall,1970-06-14,2026-05-13 08:15,Dr. James Rodriguez,Medicare,,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P114,Kayla Leon,2005-09-05,2026-05-13 11:00,Dr. Aisha Washington,UnitedHealthcare Choice Plus,,UnitedHealthcare Choice Plus,UHC_CHOICE,1.0,exact
 P115,Carolyn Miller,1975-06-10,2026-05-13 16:45,Dr. Michael O'Brien,AmeriHealth,,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
 P116,Lisa Davis,2005-02-23,2026-05-13 12:00,Dr. Aisha Washington,BCBS/UHC,,,,0.3,llm_unknown
@@ -124,19 +124,19 @@ P122,Stacey Osborne,1955-04-04,2026-05-13 15:00,Dr. Michael O'Brien,United Healt
 P123,Tyler Holmes,1943-10-13,2026-05-13 16:45,Dr. Michael O'Brien,Centene / Ambetter,MBR-15224,Ambetter from Centene,AMBETTER,0.86,fuzzy
 P124,Sylvia Martinez,1949-06-09,2026-05-13 12:00,Dr. Sarah Patel,Cigna,MBR-98381,,,0.3,llm_unknown
 P125,Mary Travis,1980-11-19,2026-05-13 12:00,Dr. James Rodriguez,Blue Cross Blue Shield of Florida,MBR-95394,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy
-P126,Pedro Ramos,1995-10-29,2026-05-13 10:45,Dr. Thomas Nguyen,Aetna.,,,,0.3,llm_unknown
+P126,Pedro Ramos,1995-10-29,2026-05-13 10:45,Dr. Thomas Nguyen,Aetna.,,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P127,Kathy Rivas,1977-08-24,2026-05-13 13:45,Dr. Emily Chen,Humana Medicare Advantage,MBR-23710,Humana Medicare Advantage,HUMANA_MA,1.0,exact
 P128,Christopher Hensley,1970-12-28,2026-05-13 14:45,Dr. Emily Chen,Molina Helthcare,MBR-62488,Molina Healthcare,MOLINA,0.97,fuzzy
 P129,David Walsh,1992-06-23,2026-05-13 08:45,Dr. Sarah Patel,BCBS/UHC,MBR-52372,,,0.3,llm_unknown
-P130,Kari Allen,1970-04-19,2026-05-13 14:00,Dr. Thomas Nguyen,Humana,,,,0.3,llm_unknown
-P131,Dustin Nelson,1962-02-13,2026-05-13 11:30,Dr. Aisha Washington,Humana,,,,0.3,llm_unknown
-P132,Angela Hernandez,1966-06-06,2026-05-13 11:30,Dr. Aisha Washington,Humanna,MBR-47752,Humana Commercial PPO,HUMANA_COMM,0.78,llm
+P130,Kari Allen,1970-04-19,2026-05-13 14:00,Dr. Thomas Nguyen,Humana,,,,0.0,llm_error
+P131,Dustin Nelson,1962-02-13,2026-05-13 11:30,Dr. Aisha Washington,Humana,,,,0.0,llm_error
+P132,Angela Hernandez,1966-06-06,2026-05-13 11:30,Dr. Aisha Washington,Humanna,MBR-47752,,,0.3,llm_unknown
 P133,Michelle Brown,1968-02-06,2026-05-13 09:00,Dr. Thomas Nguyen,WellCare Health Plans,MBR-41365,WellCare Health Plans,WELLCARE,1.0,exact
 P134,John Brown,1997-01-15,2026-05-13 16:00,Dr. Aisha Washington,BCBSIL,MBR-39451,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P135,Taylor Silva,1987-09-11,2026-05-13 15:00,Dr. Thomas Nguyen,Molina Healthcare,,Molina Healthcare,MOLINA,1.0,exact
 P136,Spencer Johnston,1972-10-27,2026-05-13 16:30,Dr. Michael O'Brien,Cigna HMO,,Cigna HMO,CIGNA_HMO,1.0,exact
 P137,Guy Molina,1998-06-10,2026-05-13 15:15,Dr. Michael O'Brien,BCBS IL,MBR-88561,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P138,Sara Medina,1990-05-10,2026-05-13 09:30,Dr. Michael O'Brien,Aetna,MBR-76550,,,0.3,llm_unknown
+P138,Sara Medina,1990-05-10,2026-05-13 09:30,Dr. Michael O'Brien,Aetna,MBR-76550,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P139,Lindsey Walker,1955-04-18,2026-05-13 12:30,Dr. Aisha Washington,UHC,MBR-96499,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
 P140,John Price,1985-11-17,2026-05-13 15:45,Dr. Emily Chen,Centene / Ambetter,MBR-81228,Ambetter from Centene,AMBETTER,0.86,fuzzy
 P141,Jennifer Martin,1972-03-03,2026-05-13 11:15,Dr. Aisha Washington,,MBR-63841,,,0.1,ambiguous
@@ -146,16 +146,16 @@ P144,Sean White,1958-01-25,2026-05-13 15:00,Dr. Aisha Washington,,,,,0.1,ambiguo
 P145,Daniel Murphy,1992-03-01,2026-05-13 10:45,Dr. Thomas Nguyen,BCBS/UHC,,,,0.3,llm_unknown
 P146,Diana Bean,1969-01-19,2026-05-13 12:30,Dr. Aisha Washington,??,MBR-95175,,,0.1,ambiguous
 P147,Bradley Smith,1977-01-26,2026-05-13 16:45,Dr. Emily Chen,UnitedHealthcare,MBR-73956,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
-P148,Trevor Walker,1945-01-12,2026-05-13 09:15,Dr. Thomas Nguyen,Medicare,MBR-47667,,,0.3,llm_unknown
+P148,Trevor Walker,1945-01-12,2026-05-13 09:15,Dr. Thomas Nguyen,Medicare,MBR-47667,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P149,Marissa Webster,2004-12-25,2026-05-13 14:00,Dr. Thomas Nguyen,WellCare Health Plans,MBR-23173,WellCare Health Plans,WELLCARE,1.0,exact
 P150,Ryan Howell,1956-08-06,2026-05-13 08:00,Dr. Emily Chen,Anthem Blue Cross,,Anthem Blue Cross,ANTHEM,1.0,exact
 P151,Michael Elliott,1955-03-13,2026-05-13 14:15,Dr. James Rodriguez,Aetna PPO,MBR-84177,Aetna HMO,AETNA_HMO,0.78,fuzzy
 P152,David Wood,1981-08-05,2026-05-13 10:15,Dr. Sarah Patel,Cigna HMO,MBR-60140,Cigna HMO,CIGNA_HMO,1.0,exact
-P153,Nicole Wilson,1996-02-12,2026-05-13 15:15,Dr. James Rodriguez,Aetna,MBR-43289,,,0.3,llm_unknown
+P153,Nicole Wilson,1996-02-12,2026-05-13 15:15,Dr. James Rodriguez,Aetna,MBR-43289,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P154,Eric Lane,2003-07-29,2026-05-13 15:30,Dr. Thomas Nguyen,UnitedHealthcare Medicare Advantage,MBR-19681,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact
 P155,Michael Rubio,1967-05-10,2026-05-13 12:45,Dr. Thomas Nguyen,Kaiser Permanente,MBR-49599,Kaiser Permanente,KAISER,1.0,exact
 P156,Christina Vargas,1996-11-18,2026-05-13 15:00,Dr. James Rodriguez,Molina Healthcare,MBR-57049,Molina Healthcare,MOLINA,1.0,exact
-P157,Ashley Barton,1998-03-24,2026-05-13 08:45,Dr. Emily Chen,Humana,MBR-99889,,,0.3,llm_unknown
+P157,Ashley Barton,1998-03-24,2026-05-13 08:45,Dr. Emily Chen,Humana,MBR-99889,,,0.0,llm_error
 P158,Renee Hogan,1978-11-16,2026-05-13 15:30,Dr. James Rodriguez,BCBS IL HMO,MBR-56179,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact
 P159,Hannah Patterson,1965-07-31,2026-05-13 12:15,Dr. Thomas Nguyen,WellCare Health Plans,MBR-92242,WellCare Health Plans,WELLCARE,1.0,exact
 P160,Matthew Smith,1968-12-12,2026-05-13 15:00,Dr. Aisha Washington,self-pay,MBR-27224,,,0.1,ambiguous
@@ -166,7 +166,7 @@ P164,Patricia Marshall,1996-07-21,2026-05-13 14:30,Dr. Sarah Patel,,,,,0.1,ambig
 P165,Debra Christian,1996-11-22,2026-05-13 16:00,Dr. Michael O'Brien,Kaiser Permanente,MBR-98125,Kaiser Permanente,KAISER,1.0,exact
 P166,Diana Hayes,1991-06-08,2026-05-13 13:00,Dr. Thomas Nguyen,Molina Helthcare,MBR-13280,Molina Healthcare,MOLINA,0.97,fuzzy
 P167,Leonard Gray,1942-04-26,2026-05-13 13:15,Dr. Thomas Nguyen,WellCare Health Plans,MBR-70852,WellCare Health Plans,WELLCARE,1.0,exact
-P168,Frederick Freeman MD,1957-12-11,2026-05-13 14:00,Dr. James Rodriguez,Humanna,MBR-14877,Humana Commercial PPO,HUMANA_COMM,0.78,llm
+P168,Frederick Freeman MD,1957-12-11,2026-05-13 14:00,Dr. James Rodriguez,Humanna,MBR-14877,,,0.3,llm_unknown
 P169,Spencer Haynes,1959-03-01,2026-05-13 09:00,Dr. James Rodriguez,CVS/Aetna,,CVS Health / Aetna,CVS_AETNA,0.78,llm
 P170,Kellie Lee,1956-10-14,2026-05-13 13:45,Dr. Aisha Washington,Medicaid Illinois,MBR-30253,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm
 P171,Katherine Chang,1987-05-12,2026-05-13 15:45,Dr. Emily Chen,Health Net,MBR-58566,Health Net Commercial,HEALTHNET,0.99,alias_exact
@@ -185,17 +185,17 @@ P183,Katherine Salas,1979-06-06,2026-05-13 13:15,Dr. Sarah Patel,Molina Helthcar
 P184,John Peterson,2006-01-24,2026-05-13 13:45,Dr. Aisha Washington,AmeriHealth,MBR-69469,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
 P185,Todd Woods,1996-04-22,2026-05-13 09:00,Dr. Thomas Nguyen,BCBS IL PPO,MBR-82264,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
 P186,John Ray,1987-01-28,2026-05-13 14:45,Dr. James Rodriguez,Medicaid Illinois,MBR-69441,Medicaid Illinois Managed Care,IL_MEDICAID,0.78,llm
-P187,Chase Hart,1961-01-14,2026-05-13 13:45,Dr. Emily Chen,Aetna.,MBR-59060,,,0.3,llm_unknown
+P187,Chase Hart,1961-01-14,2026-05-13 13:45,Dr. Emily Chen,Aetna.,MBR-59060,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P188,David Grant,1968-09-07,2026-05-13 09:00,Dr. Sarah Patel,Anthem Blue Cross,MBR-22656,Anthem Blue Cross,ANTHEM,1.0,exact
 P189,Rachel Perez,1975-12-04,2026-05-13 10:00,Dr. Aisha Washington,BCBSIL,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.99,alias_exact
-P190,Terry Evans,1980-05-30,2026-05-13 14:30,Dr. Thomas Nguyen,Humana,,,,0.3,llm_unknown
-P191,Elizabeth Oliver DDS,1990-09-23,2026-05-13 12:30,Dr. Emily Chen,Aetna.,MBR-76507,,,0.3,llm_unknown
+P190,Terry Evans,1980-05-30,2026-05-13 14:30,Dr. Thomas Nguyen,Humana,,,,0.0,llm_error
+P191,Elizabeth Oliver DDS,1990-09-23,2026-05-13 12:30,Dr. Emily Chen,Aetna.,MBR-76507,Aetna Commercial PPO,AETNA_COMM,0.78,llm
 P192,Phillip Garrett,1958-05-16,2026-05-13 11:00,Dr. Emily Chen,Blue Cross Blue Shield of Florida,,Blue Cross Blue Shield of Texas HMO,BCBS_TX_HMO,0.83,fuzzy
 P193,Brooke Thompson,1945-06-21,2026-05-13 11:45,Dr. Aisha Washington,Molina Helthcare,,Molina Healthcare,MOLINA,0.97,fuzzy
 P194,Jason Norris,1972-05-04,2026-05-13 08:30,Dr. Sarah Patel,UnitedHealthcare Medicare Advantage,MBR-50499,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact
 P195,David Mann,1988-03-14,2026-05-13 08:15,Dr. James Rodriguez,,MBR-62531,,,0.1,ambiguous
 P196,Andrea Hall,1958-05-14,2026-05-13 08:00,Dr. Thomas Nguyen,Humana Medicare Advantage,MBR-59308,Humana Medicare Advantage,HUMANA_MA,1.0,exact
-P197,Lori Guerrero,2003-11-25,2026-05-13 10:30,Dr. Emily Chen,Humana,MBR-84395,,,0.3,llm_unknown
+P197,Lori Guerrero,2003-11-25,2026-05-13 10:30,Dr. Emily Chen,Humana,MBR-84395,,,0.0,llm_error
 P198,Brian Walker,1950-07-03,2026-05-13 10:15,Dr. Aisha Washington,AmeriHealth,MBR-20693,AmeriHealth Commercial,AMERIHEALTH,0.78,llm
 P199,Samantha Jones,1951-08-28,2026-05-13 15:45,Dr. Michael O'Brien,Medicare or Medicaid,MBR-77154,,,0.1,ambiguous
 P200,Linda Holloway,2003-01-19,2026-05-13 09:30,Dr. Thomas Nguyen,WellCare Health Plans,MBR-73783,WellCare Health Plans,WELLCARE,1.0,exact
@@ -221,11 +221,11 @@ P219,Adam Russell,1955-08-27,2026-05-13 16:15,Dr. Emily Chen,Humana Medicare Adv
 P220,Susan Murray MD,1996-12-28,2026-05-13 08:30,Dr. Sarah Patel,Molina Healthcare,MBR-83133,Molina Healthcare,MOLINA,1.0,exact
 P221,Timothy Carter,1988-05-14,2026-05-13 12:15,Dr. Emily Chen,UnitedHealthcare Medicare Advantage,MBR-96980,UnitedHealthcare Medicare Advantage,UHC_MA,1.0,exact
 P222,Ruben Baird,1956-12-12,2026-05-13 12:45,Dr. James Rodriguez,Kaiser Permanente,MBR-21104,Kaiser Permanente,KAISER,1.0,exact
-P223,Charles Lee,1981-02-24,2026-05-13 13:15,Dr. Thomas Nguyen,Medicare,MBR-99838,,,0.3,llm_unknown
+P223,Charles Lee,1981-02-24,2026-05-13 13:15,Dr. Thomas Nguyen,Medicare,MBR-99838,Medicare Traditional Fee-for-Service,MEDICARE_TFI,0.78,llm
 P224,Sherry Shields,1959-03-01,2026-05-13 14:30,Dr. Sarah Patel,Humana Medicare Advantage,MBR-33627,Humana Medicare Advantage,HUMANA_MA,1.0,exact
 P225,Sarah Morgan,1993-12-19,2026-05-13 15:15,Dr. James Rodriguez,Molina Healthcare,,Molina Healthcare,MOLINA,1.0,exact
 P226,Samantha Campbell,1960-09-05,2026-05-13 09:00,Dr. Thomas Nguyen,Kaiser Permanente,MBR-91006,Kaiser Permanente,KAISER,1.0,exact
-P227,Lauren Keller,1999-03-31,2026-05-13 10:15,Dr. James Rodriguez,HCSC,,,,0.0,llm_error
+P227,Lauren Keller,1999-03-31,2026-05-13 10:15,Dr. James Rodriguez,HCSC,,Blue Cross Blue Shield of Illinois PPO,BCBS_IL_PPO,0.78,llm
 P228,Joshua Reed,1977-12-02,2026-05-13 15:00,Dr. Michael O'Brien,Molina Healthcare,MBR-41133,Molina Healthcare,MOLINA,1.0,exact
 P229,Jamie Cantu,1999-07-17,2026-05-13 15:15,Dr. Aisha Washington,BCBS IL HMO,MBR-71474,Blue Cross Blue Shield of Illinois HMO,BCBS_IL_HMO,0.99,alias_exact
 P230,Michael Armstrong,1956-04-04,2026-05-13 13:45,Dr. Michael O'Brien,United Health Care,,UnitedHealthcare Commercial,UHC_COMM,0.99,alias_exact
