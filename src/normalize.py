@@ -66,7 +66,7 @@ LLM_CALL_COUNT = 0         # incremented in _llm_fallback
 DATA_DIR           = "data"
 LLM_CACHE_PATH     = os.path.join(DATA_DIR, "llm_cache.json")
 LLM_MODEL          = "openrouter/free"
-LOW_CONF_THRESHOLD = 0.75
+LOW_CONF_THRESHOLD = 0.70
 FUZZY_THRESHOLD    = 75
 
 # ============================================================
