@@ -471,6 +471,30 @@ def normalize_payer(
     Normalize a single raw insurance_on_file string.
     Returns a validated NormResult.
     """
+        # ------------------------------------------------------------
+    # CLEAN CASE BYPASS (from simulator)
+    # Format: CLEAN::<payer_code>
+    # ------------------------------------------------------------
+    if isinstance(insurance_value, str) and insurance_value.startswith("CLEAN::"):
+        payer_code = insurance_value.replace("CLEAN::", "").strip()
+        row = payer_master_df[payer_master_df["payer_code"] == payer_code]
+
+        if not row.empty:
+            canonical = row.iloc[0]["canonical_name"]
+            return NormResult(
+                normalized_payer=canonical,
+                payer_code=payer_code,
+                confidence=1.0,
+                method="exact",
+            )
+        else:
+            # Should never happen, but safe fallback
+            return NormResult(
+                normalized_payer=None,
+                payer_code=None,
+                confidence=0.0,
+                method="llm_invalid",
+            )
     cleaned = clean_text(insurance_value)
 
     result = _deterministic(cleaned, payer_master_df)

@@ -4,5 +4,95 @@
     "payer_code": null,
     "confidence": 0.25,
     "method": "llm_empty_response"
+  },
+  "bcbs uhc": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "unitedhealthcare medicare advantage": {
+    "normalized_payer": "UHC MA",
+    "payer_code": "UHC_MA",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "bcbsil": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "blue cross blue shield of texas": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "well care": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "blue cross blue shield of illinois": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "bcbs il": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "blue cros blu sheild il": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "cigna hmo": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "centene ambetter": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "hcsc": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  },
+  "molina helthcare": {
+    "normalized_payer": "Molina",
+    "payer_code": "MOLINA",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "humana medicare advantage": {
+    "normalized_payer": "Humana MA",
+    "payer_code": "HUMANA_MA",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "blue cross blue shield of florida": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "meridian health plan": {
+    "normalized_payer": "Meridian",
+    "payer_code": "MERIDIAN",
+    "confidence": 0.78,
+    "method": "llm"
   }
 }

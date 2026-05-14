@@ -67,32 +67,59 @@ def generate_payer_master() -> pd.DataFrame:
     """
 
     payers = [
-        ("AETNA_COMM", "Aetna Commercial PPO", "Commercial", False),
-        ("CIGNA_COMM", "Cigna Commercial PPO", "Commercial", False),
-        ("UHC_COMM", "UnitedHealthcare Commercial", "Commercial", False),
-        ("HUMANA_COMM", "Humana Commercial PPO", "Commercial", False),
-        ("BCBS_IL_PPO", "BCBS Illinois PPO", "Commercial", True),
-        ("BCBS_IL_HMO", "BCBS Illinois HMO", "Commercial", False),
-        ("ANTHEM", "Anthem Blue Cross", "Commercial", False),
-        ("OSCAR", "Oscar Health", "Commercial", False),
-        ("KAISER", "Kaiser Permanente", "Commercial", False),
-        ("MAGELLAN", "Magellan Health", "Commercial", False),
-        ("AMERIHEALTH", "AmeriHealth", "Commercial", False),
-        ("HEALTHNET", "Health Net", "Commercial", False),
+        # ── Commercial ───────────────────────────────────────────────────────
+        ("AETNA_COMM",      "Aetna Commercial PPO",                     "Commercial",         False),
+        ("AETNA_HMO",       "Aetna HMO",                                "Commercial",         False),
+        ("CIGNA_COMM",      "Cigna Commercial PPO",                     "Commercial",         False),
+        ("CIGNA_HMO",       "Cigna HMO",                                "Commercial",         False),
+        ("UHC_COMM",        "UnitedHealthcare Commercial",               "Commercial",         False),
+        ("UHC_CHOICE",      "UnitedHealthcare Choice Plus",              "Commercial",         False),
+        ("HUMANA_COMM",     "Humana Commercial PPO",                     "Commercial",         False),
+        ("BCBS_IL_PPO",     "Blue Cross Blue Shield of Illinois PPO",    "Commercial",         True),  # ← high-turnover BCBS
+        ("BCBS_IL_HMO",     "Blue Cross Blue Shield of Illinois HMO",   "Commercial",         False),
+        ("BCBS_TX_HMO",     "Blue Cross Blue Shield of Texas HMO",      "Commercial",         True),  # ← high-turnover BCBS
+        ("BCBS_TX_PPO",     "Blue Cross Blue Shield of Texas PPO",      "Commercial",         False),
+        ("BCBS_FL",         "Florida Blue (BCBS Florida)",               "Commercial",         False),
+        ("ANTHEM",          "Anthem Blue Cross",                         "Commercial",         False),
+        ("OSCAR",           "Oscar Health",                              "Commercial",         False),
+        ("KAISER",          "Kaiser Permanente",                         "Commercial",         False),
+        ("TRICARE",         "Tricare",                                   "Commercial",         False),
+        ("MAGELLAN",        "Magellan Health",                           "Commercial",         False),
+        ("AMERIHEALTH",     "AmeriHealth Commercial",                    "Commercial",         False),
+        ("HEALTHNET",       "Health Net Commercial",                     "Commercial",         False),
+        ("CVS_AETNA",       "CVS Health / Aetna",                       "Commercial",         False),
 
-        ("MEDICARE_TFI", "Medicare FFS", "Medicare", False),
+        # ── Medicare ─────────────────────────────────────────────────────────
+        ("MEDICARE_TFI",    "Medicare Traditional Fee-for-Service",      "Medicare",           False),
+        ("MEDICARE_B",      "Medicare Part B",                           "Medicare",           False),
 
-        ("HUMANA_MA", "Humana MA", "Medicare Advantage", False),
-        ("UHC_MA", "UHC MA", "Medicare Advantage", False),
-        ("AETNA_MA", "Aetna MA", "Medicare Advantage", False),
+        # ── Medicare Advantage ────────────────────────────────────────────────
+        ("HUMANA_MA",       "Humana Medicare Advantage",                 "Medicare Advantage", False),
+        ("UHC_MA",          "UnitedHealthcare Medicare Advantage",       "Medicare Advantage", False),
+        ("AETNA_MA",        "Aetna Medicare Advantage",                  "Medicare Advantage", False),
+        ("BCBS_MA",         "Blue Cross Blue Shield Medicare Advantage", "Medicare Advantage", False),
+        ("CIGNA_MA",        "Cigna Medicare Advantage",                  "Medicare Advantage", False),
+        ("ANTHEM_MA",       "Anthem Medicare Advantage",                 "Medicare Advantage", False),
+        ("WELLCARE_MA",     "WellCare Medicare Advantage",               "Medicare Advantage", True),
 
-        ("MOLINA", "Molina", "Medicaid", True),
-        ("CENTENE", "Centene", "Medicaid", True),
-        ("AMBETTER", "Ambetter", "Medicaid", True),
-        ("FIDELIS", "Fidelis Care", "Medicaid", True),
-        ("MERIDIAN", "Meridian", "Medicaid", True),
+        # ── Medicaid managed care — ALL high_turnover=True (per spec) ─────────
+        ("MOLINA",          "Molina Healthcare",                         "Medicaid",           True),
+        ("CENTENE",         "Centene Corporation",                       "Medicaid",           True),
+        ("AMBETTER",        "Ambetter from Centene",                     "Medicaid",           True),
+        ("WELLCARE",        "WellCare Health Plans",                     "Medicaid",           True),
+        ("CARESOURCE",      "CareSource",                                "Medicaid",           True),
+        ("FIDELIS",         "Fidelis Care",                              "Medicaid",           True),
+        ("MERIDIAN",        "Meridian Health Plan",                      "Medicaid",           True),
+        ("IL_MEDICAID",     "Medicaid Illinois Managed Care",            "Medicaid",           True),
+        ("TX_MEDICAID",     "Medicaid Texas Managed Care",               "Medicaid",           True),
+        ("FL_MEDICAID",     "Medicaid Florida Managed Care",             "Medicaid",           True),
+        ("AMERIGROUP",      "Amerigroup Medicaid",                       "Medicaid",           True),
     ]
-    return pd.DataFrame(payers, columns=["payer_code", "canonical_name", "plan_type", "high_turnover"])
+
+    return pd.DataFrame(
+        payers,
+        columns=["payer_code", "canonical_name", "plan_type", "high_turnover"]
+    )
 
 
 # ============================================================
@@ -112,22 +139,22 @@ _NORMAL_POOL: List[str] = [
     "UnitedHealthcare",
     "Humana",
     "Blue Cross Blue Shield of Illinois",
-    "Anthem Blue Cross",
+    "Medicare",
+    "Medicaid Illinois",
+    "Medicaid Texas",
+    "Molina Healthcare",
+    "WellCare Health Plans",
+    "Ambetter",
     "Oscar Health",
+    "Anthem Blue Cross",
     "Kaiser Permanente",
-    "Magellan Health",
+    "Tricare",
     "AmeriHealth",
     "Health Net",
+    "CVS/Aetna",
     "Fidelis Care",
+    "Magellan Health",
     "Meridian Health Plan",
-    "BCBSIL",
-    "BCBS IL",
-    "UHC",
-    "Aetna PPO",
-    "BCBS IL HMO",
-    "UnitedHealthcare Choice Plus",
-    "Cigna HMO",
-    "Anthem Gold Plan",
     # Abbreviations
     "BCBSIL",
     "BCBS IL",
@@ -160,9 +187,16 @@ _NORMAL_POOL: List[str] = [
     "Well Care",
 ]
 
-_AMBIGUOUS_POOL = [
-    "self-pay", "??", "unknown", "cash pay",
-    "Medicare or Medicaid", "BCBS / Aetna", "see notes"
+_AMBIGUOUS_POOL: List[str] = [
+    "self-pay",
+    "??",
+    "Medicare or Medicaid",
+    "BCBS / Aetna",
+    "BCBS/UHC",
+    "unknown",
+    "cash pay",
+    "see notes",
+    "N/A",
 ]
 
 PROVIDERS: List[str] = [
@@ -175,21 +209,22 @@ PROVIDERS: List[str] = [
 ]
 
 
-def generate_patients_and_appointments(payer_master) :
+def generate_patients_and_appointments(
+    payer_master: pd.DataFrame,   # accepted for API consistency; not used directly
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Generate ~250 appointment rows plus a slim patients table.
 
     Returns
     -------
-    patients_df      (patient_id, member_id) used to build history
-    appointments_df  full appointments CSV
+    patients_df     – (patient_id, member_id) used to build history
+    appointments_df – full appointments CSV
     """
 
     today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
     appt_rows    = []
     patient_rows = []
-    clean_patients = set()
 
     for i in range(1, 251):
         patient_id = f"P{i:03d}"
@@ -209,9 +244,9 @@ def generate_patients_and_appointments(payer_master) :
 
         # Insurance on file — weighted messy distribution
         roll = random.random()
-        if roll < 0.02:
+        if roll < 0.04:
             insurance_on_file = np.nan           # ~3%  truly missing
-        elif roll < 0.10:
+        elif roll < 0.20:
             insurance_on_file = random.choice(_AMBIGUOUS_POOL)   # ~10% ambiguous
         else:
             insurance_on_file = random.choice(_NORMAL_POOL)      # ~87% messy-real
@@ -221,20 +256,12 @@ def generate_patients_and_appointments(payer_master) :
         # ------------------------------------------------------------
         # FORCE ~20% CLEAN OK CASES
         # ------------------------------------------------------------
-        if random.random() < 0.25:
-            # insurance_on_file = random.choice([
-            #     "Aetna", "Cigna", "UnitedHealthcare",
-            #     "Humana", "Blue Cross Blue Shield of Illinois"
-            # ])
-            # member_id = _random_member_id()
-            # clean_patients.add(patient_id)
-            row = payer_master.sample(1).iloc[0]
-            payer_code = row["payer_code"]
-
-            insurance_on_file = f"CLEAN::{payer_code}"
+        if random.random() < 0.20:
+            insurance_on_file = random.choice([
+                "Aetna", "Cigna", "UnitedHealthcare",
+                "Humana", "Blue Cross Blue Shield of Illinois"
+            ])
             member_id = _random_member_id()
-
-            clean_patients.add(patient_id)
 
         appt_rows.append({
             "patient_id":           patient_id,
@@ -248,15 +275,17 @@ def generate_patients_and_appointments(payer_master) :
 
         patient_rows.append({"patient_id": patient_id, "member_id": member_id})
 
-    return pd.DataFrame(patient_rows), pd.DataFrame(appt_rows), clean_patients
+    return pd.DataFrame(patient_rows), pd.DataFrame(appt_rows)
 
 
 # ============================================================
 # 3. Last-Check History (~175 rows, ~70% of patients)
 # ============================================================
 
-
-def generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients):
+def generate_last_check_history(
+    patients_df: pd.DataFrame,
+    payer_master: pd.DataFrame,
+) -> pd.DataFrame:
     """
     Build eligibility check history covering ~70% of patients.
 
@@ -281,48 +310,46 @@ def generate_last_check_history(patients_df, appointments_df, payer_master, clea
     # Pre-select mismatch patients (non-overlapping sets)
     changed_member_patients = set(random.sample(patients_with_history, 5))
     remaining               = [p for p in patients_with_history if p not in changed_member_patients]
-    changed_payer_patients  = set(random.sample(remaining, 10))
+    changed_payer_patients  = set(random.sample(remaining, 20))
 
     appt_member_id = dict(zip(patients_df["patient_id"], patients_df["member_id"]))
 
     rows = []
 
     for patient_id in patients_with_history:
+        # Spread dates over the last 40 days (per spec)
+        days_ago        = random.randint(0, 35)
+        last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
 
-        # if patient_id in clean_patients:
-        #     payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-        #     member_id = appt_member_id[patient_id]
-        #     days_ago = random.randint(1, 10)
-        #     last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+        # Payer code — all patients get a random assignment;
+        # changed_payer_patients are just as random, but the
+        # normalize step will map appointments to a DIFFERENT code,
+        # so the mismatch emerges naturally through the pipeline.
+        # payer_code = random.choice(payer_codes)
+        if random.random() < 0.70:          # 70% same payer
+            payer_code = payer_master.sample(1)["payer_code"].iloc[0]
+        else:
+            payer_code = random.choice(payer_codes)
 
-        if patient_id in clean_patients:
-    # Extract the CLEAN payer_code from appointments_df
-            clean_value = appointments_df.loc[appointments_df["patient_id"] == patient_id, "insurance_on_file"].iloc[0]
-            payer_code = clean_value.replace("CLEAN::", "").strip()
-            member_id = appt_member_id[patient_id]
+        # Member ID
+        original = appt_member_id.get(patient_id, "")
+        if patient_id in changed_member_patients and original:
+            # Guarantee a different ID to fire Rule 3
+            new_id = _random_member_id()
+            while new_id == original:
+                new_id = _random_member_id()
+            member_id = new_id
+        else:
+            member_id = original
 
-    # Fresh check → OK
+        # ------------------------------------------------------------
+        # FORCE CLEAN OK CASES IN HISTORY
+        # ------------------------------------------------------------
+        if random.random() < 0.20:
+            payer_code = payer_master.sample(1)["payer_code"].iloc[0]
+            member_id = original
             days_ago = random.randint(1, 10)
             last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-
-        else:
-            days_ago = random.randint(0, 25)
-            last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-            if random.random() < 0.70:
-                payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-            else:
-                payer_code = random.choice(payer_codes)
-
-            original = appt_member_id.get(patient_id, "")
-            if patient_id in changed_member_patients and original:
-                new_id = _random_member_id()
-                while new_id == original:
-                    new_id = _random_member_id()
-                member_id = new_id
-            else:
-                member_id = original
 
         result = random.choices(
             ["Active", "Inactive", "Unknown"],
@@ -345,7 +372,7 @@ def generate_last_check_history(patients_df, appointments_df, payer_master, clea
 # Main
 # ============================================================
 
-def main():
+def main() -> None:
     # Seeds are set at module level so generation order doesn't matter,
     # but we re-affirm here for clarity.
     random.seed(RANDOM_SEED)
@@ -354,9 +381,8 @@ def main():
     ensure_data_dir()
 
     payer_master                 = generate_payer_master()
-    patients_df, appointments_df, clean_patients = generate_patients_and_appointments(payer_master)
-    last_check_df                = generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients)
-
+    patients_df, appointments_df = generate_patients_and_appointments(payer_master)
+    last_check_df                = generate_last_check_history(patients_df, payer_master)
 
     # Write CSVs
     payer_master.to_csv(    os.path.join(DATA_DIR, "payer_master.csv"),        index=False)
