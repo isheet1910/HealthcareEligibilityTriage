@@ -1,0 +1,41 @@
+payer_code,canonical_name,plan_type,high_turnover
+BCBS_IL_PPO,Blue Cross Blue Shield of Illinois PPO,Commercial,True
+BCBS_IL_HMO,Blue Cross Blue Shield of Illinois HMO,Commercial,False
+BCBS_TX_HMO,Blue Cross Blue Shield of Texas HMO,Commercial,True
+BCBS_FL_COMM,Blue Cross Blue Shield of Florida,Commercial,False
+AETNA_COMM,Aetna Commercial,Commercial,False
+AETNA_PPO,Aetna PPO,Commercial,False
+UHC_COMM,UnitedHealthcare Commercial,Commercial,False
+UHC_CHOICE,UnitedHealthcare Choice Plus,Commercial,False
+CIGNA_COMM,Cigna Commercial,Commercial,False
+HUMANA_COMM,Humana Commercial,Commercial,False
+OSCAR_COMM,Oscar Health,Commercial,False
+KAISER_COMM,Kaiser Permanente,Commercial,False
+ANTHEM_COMM,Anthem Commercial,Commercial,False
+HEALTHNET_COMM,Health Net Commercial,Commercial,False
+MAGELLAN_COMM,Magellan Health,Commercial,False
+AMERIHEALTH,AmeriHealth,Commercial,False
+FIDELIS_COMM,Fidelis Care,Commercial,False
+CARESOURCE_COMM,CareSource,Commercial,False
+CVS_AETNA,CVS Aetna,Commercial,False
+TRICARE_COMM,Tricare,Commercial,False
+MEDICARE_A,Traditional Medicare Part A,Medicare,False
+MEDICARE_B,Traditional Medicare Part B,Medicare,False
+MEDICARE_SUPP,Medicare Supplement,Medicare,False
+HUMANA_MA,Humana Medicare Advantage,Medicare Advantage,False
+UHC_MA,UnitedHealthcare Medicare Advantage,Medicare Advantage,False
+AETNA_MA,Aetna Medicare Advantage,Medicare Advantage,False
+BCBS_MA,BCBS Medicare Advantage,Medicare Advantage,False
+WELLCARE_MA,WellCare Medicare Advantage,Medicare Advantage,True
+MEDICAID_IL,Illinois Medicaid,Medicaid,True
+MEDICAID_TX,Texas Medicaid,Medicaid,True
+MOLINA_MED,Molina Healthcare,Medicaid,True
+CENTENE_MED,Centene Medicaid,Medicaid,True
+AMBETTER_MED,Ambetter,Medicaid,True
+MERIDIAN_MED,Meridian Health Plan,Medicaid,True
+WELLCARE_MED,WellCare Medicaid,Medicaid,True
+CARESOURCE_MED,CareSource Medicaid,Medicaid,True
+FIDELIS_MED,Fidelis Medicaid,Medicaid,True
+AMERIHEALTH_MED,AmeriHealth Medicaid,Medicaid,True
+HEALTHNET_MED,Health Net Medicaid,Medicaid,True
+MOLINA_IL,Molina Illinois,Medicaid,True

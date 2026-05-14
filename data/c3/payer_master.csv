@@ -1,0 +1,41 @@
+payer_code,canonical_name,plan_type,high_turnover
+BCBS_IL,Blue Cross Blue Shield of Illinois,Commercial,True
+BCBS_TX,Blue Cross Blue Shield of Texas,Commercial,True
+BCBS_FL,Blue Cross Blue Shield of Florida,Commercial,False
+AETNA_COMM,Aetna Commercial PPO,Commercial,False
+AETNA_MA,Aetna Medicare Advantage,Medicare Advantage,False
+UHC_COMM,UnitedHealthcare Choice Plus,Commercial,False
+UHC_MA,UnitedHealthcare Medicare Advantage,Medicare Advantage,False
+CIGNA_COMM,Cigna Preferred,Commercial,False
+HUMANA_COMM,Humana Commercial,Commercial,False
+HUMANA_MA,Humana Gold Plus,Medicare Advantage,False
+MOLINA_IL,Molina Healthcare Illinois,Medicaid,True
+MOLINA_TX,Molina Healthcare Texas,Medicaid,True
+CENTENE_AMB,Centene Ambetter,Medicaid,True
+WELLCARE,WellCare Health Plans,Medicaid,True
+OSCAR_COMM,Oscar Health Commercial,Commercial,False
+KAISER_COMM,Kaiser Permanente Commercial,Commercial,False
+ANTHEM_COMM,Anthem Blue Commercial,Commercial,False
+CVS_AETNA,CVS/Aetna Integrated,Commercial,False
+TRICARE,Tricare Prime,Commercial,False
+MAGELLAN,Magellan Health,Commercial,False
+AMERIHEALTH,AmeriHealth Caritas,Medicaid,True
+FIDELIS,Fidelis Care,Medicaid,True
+CARESOURCE,CareSource,Medicaid,True
+HEALTH_NET,Health Net,Commercial,False
+MERIDIAN,Meridian Health Plan,Medicaid,True
+AMERIHEALTH_15,AmeriHealth Caritas Plan 15,Medicaid,True
+BCBS_IL_95,Blue Cross Blue Shield of Illinois Plan 95,Commercial,True
+HUMANA_COMM_32,Humana Commercial Plan 32,Commercial,False
+CIGNA_COMM_18,Cigna Preferred Plan 18,Commercial,False
+HEALTH_NET_14,Health Net Plan 14,Commercial,False
+FIDELIS_95,Fidelis Care Plan 95,Medicaid,True
+CVS_AETNA_12,CVS/Aetna Integrated Plan 12,Commercial,False
+TRICARE_55,Tricare Prime Plan 55,Commercial,False
+BCBS_TX_4,Blue Cross Blue Shield of Texas Plan 4,Commercial,True
+BCBS_FL_28,Blue Cross Blue Shield of Florida Plan 28,Commercial,False
+CIGNA_COMM_65,Cigna Preferred Plan 65,Commercial,False
+MAGELLAN_4,Magellan Health Plan 4,Commercial,False
+CVS_AETNA_26,CVS/Aetna Integrated Plan 26,Commercial,False
+CARESOURCE_84,CareSource Plan 84,Medicaid,True
+CARESOURCE_70,CareSource Plan 70,Medicaid,True

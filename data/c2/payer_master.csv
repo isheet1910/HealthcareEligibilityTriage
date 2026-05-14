@@ -1,0 +1,41 @@
+payer_code,canonical_name,plan_type,high_turnover
+AETNA_COMM,Aetna Commercial PPO,Commercial,False
+AETNA_HMO,Aetna HMO,Commercial,False
+CIGNA_COMM,Cigna Commercial PPO,Commercial,False
+CIGNA_HMO,Cigna HMO,Commercial,False
+UHC_CHOICE,UnitedHealthcare Choice Plus,Commercial,False
+UHC_COMM,UnitedHealthcare Commercial,Commercial,False
+HUMANA_COMM,Humana Commercial PPO,Commercial,False
+BCBS_IL_PPO,Blue Cross Blue Shield of Illinois PPO,Commercial,True
+BCBS_IL_HMO,Blue Cross Blue Shield of Illinois HMO,Commercial,False
+BCBS_TX_HMO,Blue Cross Blue Shield of Texas HMO,Commercial,True
+BCBS_TX_PPO,Blue Cross Blue Shield of Texas PPO,Commercial,False
+BCBS_FL,Florida Blue (BCBS Florida),Commercial,False
+ANTHEM,Anthem Blue Cross,Commercial,False
+OSCAR,Oscar Health,Commercial,False
+KAISER,Kaiser Permanente,Commercial,False
+TRICARE,Tricare,Commercial,False
+MAGELLAN,Magellan Health,Commercial,False
+AMERIHEALTH,AmeriHealth Commercial,Commercial,False
+HEALTHNET,Health Net Commercial,Commercial,False
+CVS_AETNA,CVS Health / Aetna,Commercial,False
+MEDICARE_TFI,Medicare Traditional Fee-for-Service,Medicare,False
+MEDICARE_B,Medicare Part B,Medicare,False
+HUMANA_MA,Humana Medicare Advantage,Medicare Advantage,False
+UHC_MA,UnitedHealthcare Medicare Advantage,Medicare Advantage,False
+AETNA_MA,Aetna Medicare Advantage,Medicare Advantage,False
+BCBS_MA,Blue Cross Blue Shield Medicare Advantage,Medicare Advantage,False
+CIGNA_MA,Cigna Medicare Advantage,Medicare Advantage,False
+ANTHEM_MA,Anthem Medicare Advantage,Medicare Advantage,False
+MOLINA,Molina Healthcare,Medicaid,True
+CENTENE,Centene Corporation,Medicaid,True
+AMBETTER,Ambetter from Centene,Medicaid,True
+WELLCARE,WellCare Health Plans,Medicaid,True
+CARESOURCE,CareSource,Medicaid,True
+FIDELIS,Fidelis Care,Medicaid,True
+MERIDIAN,Meridian Health Plan,Medicaid,True
+IL_MEDICAID,Medicaid Illinois Managed Care,Medicaid,True
+TX_MEDICAID,Medicaid Texas Managed Care,Medicaid,True
+FL_MEDICAID,Medicaid Florida Managed Care,Medicaid,True
+AMERIGROUP,Amerigroup Medicaid,Medicaid,True
+SUNFLOWER,Sunflower Health Plan (Medicaid),Medicaid,True
