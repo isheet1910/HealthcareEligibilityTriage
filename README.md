@@ -115,7 +115,7 @@ Implements the five business rules in strict order:
 2. Payer changed
 3. Member ID mismatch
 4. High‑turnover payer + last check > 14 days
-5. Low confidence (<0.70)
+5. Low confidence (<0.80)
 
 If none match → OK  
 If payer cannot be identified → Unknown
