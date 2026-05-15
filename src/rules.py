@@ -4,16 +4,15 @@ rules.py
 Eligibility triage rule engine.
 
 Takes normalized appointments + payer master + history.
-Applies 6 business rules in strict order (first match wins).
+Applies 5 business rules in strict order (first match wins). after checking if it is   Unknown / unresolvable insurance   → Unknown
 Returns the appointments DataFrame with two new columns: status, reason.
 
 Rules:
-    Rule 0   Unknown / unresolvable insurance   → Unknown
     Rule 1   No history, or last check > 30d    → Re-check needed
     Rule 2   Payer changed since last check      → Re-check needed
     Rule 3   Member ID mismatch                  → Re-check needed
     Rule 4   High-turnover payer + check > 14d  → Re-check needed
-    Rule 5   Low confidence match (< 70%)        → Re-check needed
+    Rule 5   Low confidence match (< 80%)        → Re-check needed
     Default  all clear                           → OK
 
 No Pydantic here — the rule engine works entirely with plain pandas
@@ -49,10 +48,10 @@ def _build_history_index(history_df: pd.DataFrame) -> Dict[str, pd.Series]:
     Dates are parsed ONCE here for the whole DataFrame rather than
     calling pd.to_datetime 250 times inside the row loop.
     """
-    df = history_df.copy()
-    df["last_check_date"] = pd.to_datetime(df["last_check_date"], errors="coerce")
-    df = df.sort_values("last_check_date", ascending=False)
-    df = df.drop_duplicates(subset="patient_id", keep="first")
+    df = history_df.copy() #access all the data from lastcheckhistory file build disctionary once and no longer need to access the file for each row in the loop
+    df["last_check_date"] = pd.to_datetime(df["last_check_date"], errors="coerce") #parse the date and convert it to datetime format
+    df = df.sort_values("last_check_date", ascending=False) #sort the data by date, with the most recent check first
+    df = df.drop_duplicates(subset="patient_id", keep="first") #drop the duplicates
     return {row["patient_id"]: row for _, row in df.iterrows()}
 
 
@@ -97,7 +96,7 @@ def _evaluate_row(
     today: pd.Timestamp,
 ) -> Tuple[str, str]:
     """
-    Apply all 6 rules to one appointment row.
+    Apply all 5 rules to one appointment row.
     Returns (status, reason). First rule that matches wins.
     """
 
@@ -108,8 +107,8 @@ def _evaluate_row(
     member_id  = row.get("member_id")
 
     # ----------------------------------------------------------
-    # Rule 0 – Unknown insurance
-    # Can't run any other check if we don't know the payer.
+    # first check for Unknown insurance
+    # Can't run any other check if we don't know the payer. basically it is unkown and not reliable so we need to do manual review
     # ----------------------------------------------------------
     if method == "ambiguous" or _is_blank(payer_code):
         return (
@@ -216,7 +215,7 @@ def _evaluate_row(
 
 
 # ============================================================
-# Public API
+# Main to apply rules to the whole DataFrame
 # ============================================================
 
 
@@ -297,9 +296,9 @@ if __name__ == "__main__":
     print(f"  {'─' * 30}")
     print(f"  {'TOTAL':<20} {total:>4}")
 
-    print("\n===== SAMPLE RESULTS =====")
-    print(
-        final_df[["patient_name", "insurance_on_file", "status", "reason"]]
-        .head(20)
-        .to_string(index=False, max_colwidth=55)
-    )
+    # print("\n===== SAMPLE RESULTS =====")
+    # print(
+    #     final_df[["patient_name", "insurance_on_file", "status", "reason"]]
+    #     .head(20)
+    #     .to_string(index=False, max_colwidth=55)
+    # )

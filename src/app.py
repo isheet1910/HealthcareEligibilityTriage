@@ -59,6 +59,10 @@ STATUS_COLORS = {
  
 # ============================================================
 # Data loading  (cached so filters don't re-read from disk)
+#The @st.cache_data decorator is critical. Without it, every user interaction (clicking a filter, adjusting a slider) would re-read the 
+# CSV from disk. With it, the data is loaded once and cached in memory for the session. This makes the dashboard much more responsive, especially 
+# as the dataset grows. The cache is automatically invalidated 
+# if the underlying file changes, ensuring users always see up-to-date information without unnecessary reloads.
 # ============================================================
  
 @st.cache_data
@@ -74,7 +78,7 @@ def load_data(path: Path) -> pd.DataFrame:
         df["appointment_datetime"], errors="coerce"
     )
  
-    # Round confidence to 2 dp for display
+    # Round confidence to 2 decimal points easier to display for display
     if "confidence" in df.columns:
         df["confidence"] = df["confidence"].round(2)
  
@@ -82,7 +86,8 @@ def load_data(path: Path) -> pd.DataFrame:
  
  
 # ============================================================
-# Guard: fail gracefully if the pipeline hasn't been run yet
+# Guard: fail gracefully if the pipeline hasn't been run yet check if all the 
+#  files have been run simulate normalize rules 
 # ============================================================
  
 if not DATA_PATH.exists():
@@ -99,7 +104,7 @@ if not DATA_PATH.exists():
     st.stop()
  
 # ============================================================
-# Load
+# Load teh data file final file
 # ============================================================
  
 with st.spinner("Loading today's appointments..."):
@@ -140,7 +145,7 @@ min_confidence = st.sidebar.slider(
     "Minimum confidence",
     min_value=0.0,
     max_value=1.0,
-    value=0.80,
+    value=0.50,
     step=0.05,
     help="Filter out rows where the payer match confidence is below this value.",
 )
