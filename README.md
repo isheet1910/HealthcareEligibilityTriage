@@ -199,7 +199,7 @@ Deterministic logic resolves ~75% of rows.
 - Added diagnostics section in the UI
 - Added member‑ID‑stuffed strings to simulate real front‑desk behavior
 
-## 9. Hours Log (Honest)
+## 9. Hours Log 
 | **Phase** |	**Hours**|
 | :------: | :----------: |
 | Data simulator |	4 |
