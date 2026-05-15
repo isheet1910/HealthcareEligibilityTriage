@@ -1,5 +1,71 @@
 {
+  "anthem gold plan": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  },
+  "bcbs uhc": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
   "unitedhealthcare medicare advantage": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  },
+  "bcbsil": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "blue cross blue shield of texas": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "well care": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "blue cross blue shield of illinois": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  },
+  "bcbs il": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.2,
+    "method": "llm_invalid"
+  },
+  "blue cros blu sheild il": {
+    "normalized_payer": "BCBS Illinois PPO",
+    "payer_code": "BCBS_IL_PPO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "cigna hmo": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
+  },
+  "centene ambetter": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.3,
+    "method": "llm_unknown"
+  },
+  "hcsc": {
     "normalized_payer": null,
     "payer_code": null,
     "confidence": 0.25,
@@ -11,94 +77,34 @@
     "confidence": 0.78,
     "method": "llm"
   },
-  "bcbs il hmo": {
-    "normalized_payer": "BCBS Illinois HMO",
-    "payer_code": "BCBS_IL_HMO",
+  "humana medicare advantage": {
+    "normalized_payer": "Humana MA",
+    "payer_code": "HUMANA_MA",
     "confidence": 0.78,
     "method": "llm"
   },
-  "centene ambetter": {
+  "blue cross blue shield of florida": {
     "normalized_payer": null,
     "payer_code": null,
     "confidence": 0.3,
     "method": "llm_unknown"
   },
-  "bcbsil": {
+  "meridian health plan": {
+    "normalized_payer": "Meridian",
+    "payer_code": "MERIDIAN",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "bcbs il hmo": {
     "normalized_payer": null,
     "payer_code": null,
     "confidence": 0.25,
     "method": "llm_empty_response"
   },
   "unitedhealthcare choice plus": {
-    "normalized_payer": "UnitedHealthcare Commercial",
-    "payer_code": "UHC_COMM",
-    "confidence": 0.78,
-    "method": "llm"
-  },
-  "cigna hmo": {
     "normalized_payer": null,
     "payer_code": null,
     "confidence": 0.25,
     "method": "llm_empty_response"
-  },
-  "blue cross blue shield of illinois": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "bcbs il": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "blue cros blu sheild il": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "anthem gold plan": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "blue cross blue shield of texas": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "well care": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "meridian health plan": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "blue cross blue shield of florida": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "humana medicare advantage": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.25,
-    "method": "llm_empty_response"
-  },
-  "meridian": {
-    "normalized_payer": null,
-    "payer_code": null,
-    "confidence": 0.2,
-    "method": "llm_invalid"
   }
 }

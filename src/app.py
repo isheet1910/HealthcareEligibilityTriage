@@ -219,7 +219,8 @@ def _render_section(status: str) -> None:
         else:
             st.dataframe(
                 display,
-                use_container_width=True,
+                width='stretch',
+                # use_container_width=True,
                 hide_index=True,
                 column_config={
                     # Make confidence a progress bar so it reads visually
@@ -286,7 +287,8 @@ method_counts = (
 diag_col1, diag_col2 = st.columns([1, 2])
  
 with diag_col1:
-    st.dataframe(method_counts, hide_index=True, use_container_width=True)
+    st.dataframe(method_counts, hide_index=True, width='stretch')
+    # use_container_width=True
  
 with diag_col2:
     # Human-readable summary line

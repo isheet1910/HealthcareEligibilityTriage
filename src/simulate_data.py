@@ -16,7 +16,7 @@ Run:
 import os
 import random
 from datetime import datetime, timedelta
-from typing import List, Tuple
+from typing import List, Tuple, Set
 
 import numpy as np
 import pandas as pd
@@ -67,30 +67,53 @@ def generate_payer_master() -> pd.DataFrame:
     """
 
     payers = [
-        ("AETNA_COMM", "Aetna Commercial PPO", "Commercial", False),
-        ("CIGNA_COMM", "Cigna Commercial PPO", "Commercial", False),
-        ("UHC_COMM", "UnitedHealthcare Commercial", "Commercial", False),
-        ("HUMANA_COMM", "Humana Commercial PPO", "Commercial", False),
-        ("BCBS_IL_PPO", "BCBS Illinois PPO", "Commercial", True),
-        ("BCBS_IL_HMO", "BCBS Illinois HMO", "Commercial", False),
-        ("ANTHEM", "Anthem Blue Cross", "Commercial", False),
-        ("OSCAR", "Oscar Health", "Commercial", False),
-        ("KAISER", "Kaiser Permanente", "Commercial", False),
-        ("MAGELLAN", "Magellan Health", "Commercial", False),
-        ("AMERIHEALTH", "AmeriHealth", "Commercial", False),
-        ("HEALTHNET", "Health Net", "Commercial", False),
-
-        ("MEDICARE_TFI", "Medicare FFS", "Medicare", False),
-
-        ("HUMANA_MA", "Humana MA", "Medicare Advantage", False),
-        ("UHC_MA", "UHC MA", "Medicare Advantage", False),
-        ("AETNA_MA", "Aetna MA", "Medicare Advantage", False),
-
-        ("MOLINA", "Molina", "Medicaid", True),
-        ("CENTENE", "Centene", "Medicaid", True),
-        ("AMBETTER", "Ambetter", "Medicaid", True),
-        ("FIDELIS", "Fidelis Care", "Medicaid", True),
-        ("MERIDIAN", "Meridian", "Medicaid", True),
+        # ── Commercial ────────────────────────────────────────────────────────
+        ("AETNA_COMM",   "Aetna Commercial PPO",                      "Commercial",         False),
+        ("AETNA_HMO",    "Aetna HMO",                                 "Commercial",         False),
+        ("CIGNA_COMM",   "Cigna Commercial PPO",                      "Commercial",         False),
+        ("CIGNA_HMO",    "Cigna HMO",                                 "Commercial",         False),
+        ("UHC_COMM",     "UnitedHealthcare Commercial",                "Commercial",         False),
+        ("UHC_CHOICE",   "UnitedHealthcare Choice Plus",               "Commercial",         False),
+        ("HUMANA_COMM",  "Humana Commercial PPO",                      "Commercial",         False),
+        ("BCBS_IL_PPO",  "Blue Cross Blue Shield of Illinois PPO",     "Commercial",         True),
+        ("BCBS_IL_HMO",  "Blue Cross Blue Shield of Illinois HMO",     "Commercial",         False),
+        ("BCBS_TX_HMO",  "Blue Cross Blue Shield of Texas HMO",        "Commercial",         True),
+        ("BCBS_TX_PPO",  "Blue Cross Blue Shield of Texas PPO",        "Commercial",         False),
+        ("BCBS_FL",      "Florida Blue (BCBS Florida)",                 "Commercial",         False),
+        ("ANTHEM",       "Anthem Blue Cross",                          "Commercial",         False),
+        ("OSCAR",        "Oscar Health",                               "Commercial",         False),
+        ("KAISER",       "Kaiser Permanente",                          "Commercial",         False),
+        ("TRICARE",      "Tricare",                                    "Commercial",         False),
+        ("MAGELLAN",     "Magellan Health",                            "Commercial",         False),
+        ("AMERIHEALTH",  "AmeriHealth Commercial",                     "Commercial",         False),
+        ("HEALTHNET",    "Health Net Commercial",                      "Commercial",         False),
+        ("CVS_AETNA",    "CVS Health / Aetna",                        "Commercial",         False),
+ 
+        # ── Medicare ──────────────────────────────────────────────────────────
+        ("MEDICARE_TFI", "Medicare Traditional Fee-for-Service",       "Medicare",           False),
+        ("MEDICARE_B",   "Medicare Part B",                            "Medicare",           False),
+ 
+        # ── Medicare Advantage ────────────────────────────────────────────────
+        ("HUMANA_MA",    "Humana Medicare Advantage",                  "Medicare Advantage", False),
+        ("UHC_MA",       "UnitedHealthcare Medicare Advantage",        "Medicare Advantage", False),
+        ("AETNA_MA",     "Aetna Medicare Advantage",                   "Medicare Advantage", False),
+        ("BCBS_MA",      "Blue Cross Blue Shield Medicare Advantage",  "Medicare Advantage", False),
+        ("CIGNA_MA",     "Cigna Medicare Advantage",                   "Medicare Advantage", False),
+        ("ANTHEM_MA",    "Anthem Medicare Advantage",                  "Medicare Advantage", False),
+        ("WELLCARE_MA",  "WellCare Medicare Advantage",                "Medicare Advantage", True),
+ 
+        # ── Medicaid managed care — ALL high_turnover=True ────────────────────
+        ("MOLINA",       "Molina Healthcare",                          "Medicaid",           True),
+        ("CENTENE",      "Centene Corporation",                        "Medicaid",           True),
+        ("AMBETTER",     "Ambetter from Centene",                      "Medicaid",           True),
+        ("WELLCARE",     "WellCare Health Plans",                      "Medicaid",           True),
+        ("CARESOURCE",   "CareSource",                                 "Medicaid",           True),
+        ("FIDELIS",      "Fidelis Care",                               "Medicaid",           True),
+        ("MERIDIAN",     "Meridian Health Plan",                       "Medicaid",           True),
+        ("IL_MEDICAID",  "Medicaid Illinois Managed Care",             "Medicaid",           True),
+        ("TX_MEDICAID",  "Medicaid Texas Managed Care",                "Medicaid",           True),
+        ("FL_MEDICAID",  "Medicaid Florida Managed Care",              "Medicaid",           True),
+        ("AMERIGROUP",   "Amerigroup Medicaid",                        "Medicaid",           True),
     ]
     return pd.DataFrame(payers, columns=["payer_code", "canonical_name", "plan_type", "high_turnover"])
 
@@ -106,63 +129,35 @@ def generate_payer_master() -> pd.DataFrame:
 #   ~87% → messy-but-real (clean names, abbrevs, typos, ID-stuffed)
 
 _NORMAL_POOL: List[str] = [
-    # Clean canonical names
-    "Aetna",
-    "Cigna",
-    "UnitedHealthcare",
-    "Humana",
+    # Clean-ish names (NOT exact canonical names — those go to clean_patients only)
+    "Aetna", "Cigna", "UnitedHealthcare", "Humana",
     "Blue Cross Blue Shield of Illinois",
-    "Anthem Blue Cross",
-    "Oscar Health",
-    "Kaiser Permanente",
-    "Magellan Health",
-    "AmeriHealth",
-    "Health Net",
-    "Fidelis Care",
-    "Meridian Health Plan",
-    "BCBSIL",
-    "BCBS IL",
-    "UHC",
-    "Aetna PPO",
-    "BCBS IL HMO",
-    "UnitedHealthcare Choice Plus",
-    "Cigna HMO",
-    "Anthem Gold Plan",
+    "AmeriHealth", "Health Net",
     # Abbreviations
-    "BCBSIL",
-    "BCBS IL",
-    "UHC",
-    "HCSC",
-    # With plan tier
-    "Aetna PPO",
-    "BCBS IL HMO",
-    "BCBS IL PPO",
-    "UnitedHealthcare Choice Plus",
-    "Cigna HMO",
-    "Anthem Gold Plan",
+    "BCBSIL", "BCBS IL", "UHC", "HCSC",
+    # With plan tier — these are NOT exact canonical names so no overlap risk
+    "Aetna PPO", "BCBS IL HMO", "BCBS IL PPO",
+    "UHC Choice Plus", "Anthem Gold Plan",
     # Long names
-    "Blue Cross Blue Shield of Texas",
-    "Blue Cross Blue Shield of Florida",
-    "Humana Medicare Advantage",
-    "UnitedHealthcare Medicare Advantage",
+    "Blue Cross Blue Shield of Texas", "Blue Cross Blue Shield of Florida",
+    "Humana Medicare Advantage plan", "UnitedHealthcare MA",
     "Centene / Ambetter",
-    # Member ID stuffed into the field
-    "BCBSIL #MBR12345",
-    "Aetna / ID: 987654",
-    "UHC - 334455XY",
-    # Typos / OCR garbage
-    "Blue Cros Blu Sheild IL",
-    "Humanna",
-    "United Health Care",
-    "Aetna.",
-    "Cigna.",
-    "Molina Helthcare",
-    "Well Care",
+    # Member ID stuffed in
+    "BCBSIL #MBR12345", "Aetna / ID: 987654", "UHC - 334455XY",
+    # Typos / OCR garbage — safe, won't match canonical exactly
+    "Blue Cros Blu Sheild IL", "Humanna", "United Health Care",
+    "Aetna.", "Cigna.", "Molina Helthcare", "Well Care",
+    # Medicaid / Medicare shorthand (not exact canonical)
+    "Medicaid Illinois", "Medicaid Texas", "Medicare",
+    "WellCare", "Ambetter", "Centene", "CVS/Aetna",
+    "Fidelis", "Meridian", "Molina", "Oscar", "Kaiser",
+    "Tricare", "Magellan", "Fidelis Care NY", "Anthem BCBS",
 ]
 
 _AMBIGUOUS_POOL = [
     "self-pay", "??", "unknown", "cash pay",
-    "Medicare or Medicaid", "BCBS / Aetna", "see notes"
+    "Medicare or Medicaid", "BCBS / Aetna", "BCBS/UHC",
+    "see notes", "N/A"
 ]
 
 PROVIDERS: List[str] = [
@@ -187,6 +182,8 @@ def generate_patients_and_appointments(payer_master) :
 
     today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
+    canonical_names = payer_master["canonical_name"].tolist()
+
     appt_rows    = []
     patient_rows = []
     clean_patients = set()
@@ -207,34 +204,51 @@ def generate_patients_and_appointments(payer_master) :
         # Member ID: present 75% of the time
         member_id = _random_member_id() if random.random() < 0.75 else ""
 
-        # Insurance on file — weighted messy distribution
-        roll = random.random()
-        if roll < 0.02:
-            insurance_on_file = np.nan           # ~3%  truly missing
-        elif roll < 0.10:
-            insurance_on_file = random.choice(_AMBIGUOUS_POOL)   # ~10% ambiguous
-        else:
-            insurance_on_file = random.choice(_NORMAL_POOL)      # ~87% messy-real
-
-        random.choice(_NORMAL_POOL)
-
-        # ------------------------------------------------------------
-        # FORCE ~20% CLEAN OK CASES
-        # ------------------------------------------------------------
+# Decide insurance_on_file — three-way weighted split
         if random.random() < 0.25:
-            # insurance_on_file = random.choice([
-            #     "Aetna", "Cigna", "UnitedHealthcare",
-            #     "Humana", "Blue Cross Blue Shield of Illinois"
-            # ])
-            # member_id = _random_member_id()
-            # clean_patients.add(patient_id)
-            row = payer_master.sample(1).iloc[0]
-            payer_code = row["payer_code"]
-
-            insurance_on_file = f"CLEAN::{payer_code}"
-            member_id = _random_member_id()
-
+            # ~25% clean cases: exact canonical name so normalizer
+            # hits instantly and rule engine marks them OK
+            insurance_on_file = random.choice(canonical_names)
+            if not member_id:
+                member_id = _random_member_id()
             clean_patients.add(patient_id)
+        else:
+            # ~75% messy cases
+            roll = random.random()
+            if roll < 0.03:
+                insurance_on_file = np.nan
+            elif roll < 0.13:
+                insurance_on_file = random.choice(_AMBIGUOUS_POOL)
+            else:
+                insurance_on_file = random.choice(_NORMAL_POOL)
+        # # Insurance on file — weighted messy distribution
+        # roll = random.random()
+        # if roll < 0.02:
+        #     insurance_on_file = np.nan           # ~3%  truly missing
+        # elif roll < 0.10:
+        #     insurance_on_file = random.choice(_AMBIGUOUS_POOL)   # ~10% ambiguous
+        # else:
+        #     insurance_on_file = random.choice(_NORMAL_POOL)      # ~87% messy-real
+
+        # random.choice(_NORMAL_POOL)
+
+        # # ------------------------------------------------------------
+        # # FORCE ~20% CLEAN OK CASES
+        # # ------------------------------------------------------------
+        # if random.random() < 0.25:
+        #     # insurance_on_file = random.choice([
+        #     #     "Aetna", "Cigna", "UnitedHealthcare",
+        #     #     "Humana", "Blue Cross Blue Shield of Illinois"
+        #     # ])
+        #     # member_id = _random_member_id()
+        #     # clean_patients.add(patient_id)
+        #     row = payer_master.sample(1).iloc[0]
+        #     payer_code = row["payer_code"]
+
+        #     insurance_on_file = f"CLEAN::{payer_code}"
+        #     member_id = _random_member_id()
+
+        #     clean_patients.add(patient_id)
 
         appt_rows.append({
             "patient_id":           patient_id,
@@ -256,91 +270,167 @@ def generate_patients_and_appointments(payer_master) :
 # ============================================================
 
 
-def generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients):
-    """
-    Build eligibility check history covering ~70% of patients.
+# def generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients):
+#     """
+#     Build eligibility check history covering ~70% of patients.
 
-    Deliberately seeded mismatches to exercise triage rules:
-      - 15 patients have a DIFFERENT member_id than appointments.csv
-        → triggers Rule 3 "member ID changed"
-      - 20 patients have a DIFFERENT payer_code than what is on file
-        → triggers Rule 2 "payer changed"
+#     Deliberately seeded mismatches to exercise triage rules:
+#       - 15 patients have a DIFFERENT member_id than appointments.csv
+#         → triggers Rule 3 "member ID changed"
+#       - 20 patients have a DIFFERENT payer_code than what is on file
+#         → triggers Rule 2 "payer changed"
 
-    last_check_date is spread across the last 40 days (per spec),
-    skewed so a realistic mix falls inside and outside the 30-day window.
-    """
+#     last_check_date is spread across the last 40 days (per spec),
+#     skewed so a realistic mix falls inside and outside the 30-day window.
+#     """
 
+#     today      = datetime.today().date()
+#     payer_codes = payer_master["payer_code"].tolist()
+
+#     all_patients   = patients_df["patient_id"].tolist()
+#     n_with_history = int(len(all_patients) * 0.70)  
+
+#     patients_with_history = random.sample(all_patients, n_with_history)
+
+#     # Pre-select mismatch patients (non-overlapping sets)
+#     changed_member_patients = set(random.sample(patients_with_history, 5))
+#     remaining               = [p for p in patients_with_history if p not in changed_member_patients]
+#     changed_payer_patients  = set(random.sample(remaining, 10))
+
+#     appt_member_id = dict(zip(patients_df["patient_id"], patients_df["member_id"]))
+
+#     rows = []
+
+#     for patient_id in patients_with_history:
+
+#         # if patient_id in clean_patients:
+#         #     payer_code = payer_master.sample(1)["payer_code"].iloc[0]
+#         #     member_id = appt_member_id[patient_id]
+#         #     days_ago = random.randint(1, 10)
+#         #     last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+
+#         if patient_id in clean_patients:
+#     # Extract the CLEAN payer_code from appointments_df
+#             clean_value = appointments_df.loc[appointments_df["patient_id"] == patient_id, "insurance_on_file"].iloc[0]
+#             payer_code = clean_value.replace("CLEAN::", "").strip()
+#             member_id = appt_member_id[patient_id]
+
+#     # Fresh check → OK
+#             days_ago = random.randint(1, 10)
+#             last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+
+
+#         else:
+#             days_ago = random.randint(0, 25)
+#             last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+
+#             if random.random() < 0.70:
+#                 payer_code = payer_master.sample(1)["payer_code"].iloc[0]
+#             else:
+#                 payer_code = random.choice(payer_codes)
+
+#             original = appt_member_id.get(patient_id, "")
+#             if patient_id in changed_member_patients and original:
+#                 new_id = _random_member_id()
+#                 while new_id == original:
+#                     new_id = _random_member_id()
+#                 member_id = new_id
+#             else:
+#                 member_id = original
+
+#         result = random.choices(
+#             ["Active", "Inactive", "Unknown"],
+#             weights=[0.70, 0.20, 0.10],
+#             k=1,
+#         )[0]
+
+#         rows.append({
+#             "patient_id":     patient_id,
+#             "payer_code":     payer_code,
+#             "member_id":      member_id,
+#             "last_check_date": last_check_date,
+#             "result":         result,
+#         })
+
+#     return pd.DataFrame(rows)
+
+def generate_last_check_history(
+    patients_df:     pd.DataFrame,
+    appointments_df: pd.DataFrame,
+    payer_master:    pd.DataFrame,
+    clean_patients:  Set[str],
+) -> pd.DataFrame:
+ 
     today      = datetime.today().date()
     payer_codes = payer_master["payer_code"].tolist()
-
-    all_patients   = patients_df["patient_id"].tolist()
-    n_with_history = int(len(all_patients) * 0.70)  
-
+ 
+    # Build lookup: patient_id → canonical_name used in appointments
+    # (used to find the correct payer_code for clean patients)
+    canonical_to_code = dict(
+        zip(payer_master["canonical_name"], payer_master["payer_code"])
+    )
+    appt_insurance = dict(
+        zip(appointments_df["patient_id"], appointments_df["insurance_on_file"])
+    )
+    appt_member_id = dict(
+        zip(patients_df["patient_id"], patients_df["member_id"])
+    )
+ 
+    all_patients      = patients_df["patient_id"].tolist()
+    n_with_history    = int(len(all_patients) * 0.70)   # 175
     patients_with_history = random.sample(all_patients, n_with_history)
-
-    # Pre-select mismatch patients (non-overlapping sets)
-    changed_member_patients = set(random.sample(patients_with_history, 5))
-    remaining               = [p for p in patients_with_history if p not in changed_member_patients]
-    changed_payer_patients  = set(random.sample(remaining, 10))
-
-    appt_member_id = dict(zip(patients_df["patient_id"], patients_df["member_id"]))
-
+ 
+    # Mismatch sets — only from non-clean patients so we don't
+    # accidentally break a patient that should be OK
+    non_clean = [p for p in patients_with_history if p not in clean_patients]
+    changed_member_patients = set(random.sample(non_clean, min(15, len(non_clean))))
+    remaining               = [p for p in non_clean if p not in changed_member_patients]
+    changed_payer_patients  = set(random.sample(remaining, min(20, len(remaining))))
+ 
     rows = []
-
+ 
     for patient_id in patients_with_history:
-
-        # if patient_id in clean_patients:
-        #     payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-        #     member_id = appt_member_id[patient_id]
-        #     days_ago = random.randint(1, 10)
-        #     last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
+ 
         if patient_id in clean_patients:
-    # Extract the CLEAN payer_code from appointments_df
-            clean_value = appointments_df.loc[appointments_df["patient_id"] == patient_id, "insurance_on_file"].iloc[0]
-            payer_code = clean_value.replace("CLEAN::", "").strip()
-            member_id = appt_member_id[patient_id]
-
-    # Fresh check → OK
-            days_ago = random.randint(1, 10)
-            last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-
+            # Use the exact payer_code that matches the canonical name in appointments
+            insurance_val = appt_insurance.get(patient_id, "")
+            payer_code    = canonical_to_code.get(insurance_val, random.choice(payer_codes))
+            member_id     = appt_member_id.get(patient_id, _random_member_id())
+            # Fresh check — always within 10 days so it passes Rule 1
+            days_ago      = random.randint(1, 10)
+ 
         else:
-            days_ago = random.randint(0, 25)
-            last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-            if random.random() < 0.70:
-                payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-            else:
-                payer_code = random.choice(payer_codes)
-
+            # Normal case: spread over last 40 days
+            days_ago   = random.randint(0, 40)
+            payer_code = random.choice(payer_codes)
+ 
             original = appt_member_id.get(patient_id, "")
             if patient_id in changed_member_patients and original:
+                # Different member_id → fires Rule 3
                 new_id = _random_member_id()
                 while new_id == original:
                     new_id = _random_member_id()
                 member_id = new_id
             else:
                 member_id = original
-
+ 
+        last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+ 
         result = random.choices(
             ["Active", "Inactive", "Unknown"],
             weights=[0.70, 0.20, 0.10],
             k=1,
         )[0]
-
+ 
         rows.append({
-            "patient_id":     patient_id,
-            "payer_code":     payer_code,
-            "member_id":      member_id,
+            "patient_id":      patient_id,
+            "payer_code":      payer_code,
+            "member_id":       member_id,
             "last_check_date": last_check_date,
-            "result":         result,
+            "result":          result,
         })
-
+ 
     return pd.DataFrame(rows)
-
-
 # ============================================================
 # Main
 # ============================================================

@@ -28,6 +28,7 @@ import json
 import os
 import re
 from typing import Dict, List, Literal, Optional
+import traceback
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -429,6 +430,7 @@ def _llm_fallback(
             if (message and message.content)
             else ""
         )
+        print(f"    [LLM RESPONSE] {content}")
 
         if not content:
             return _cache(NormResult(confidence=0.25, method="llm_empty_response"))
@@ -454,6 +456,9 @@ def _llm_fallback(
         )
 
     except Exception as e:
+        print("\n========== LLM ERROR ==========")
+        traceback.print_exc()
+        print("================================\n")
         print(f"LLM fallback error: {e}")
         return _cache(NormResult(confidence=0.0, method="llm_error"))
 
