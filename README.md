@@ -150,7 +150,7 @@ Because false negatives are far more costly, the system leans toward more re‑c
 I selected 0.80 as the confidence threshold for Rule 5.
 
 This value reflects the operational asymmetry:
-- Anything below 70% confidence means the system is not reliably sure which payer the patient has
+- Anything below 80% confidence means the system is not reliably sure which payer the patient has
 - If we don’t know the payer, we can’t even begin to verify eligibility
 - That uncertainty alone is enough to justify a re‑check
 
