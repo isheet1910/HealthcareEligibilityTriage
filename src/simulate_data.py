@@ -129,7 +129,7 @@ def generate_payer_master() -> pd.DataFrame:
 #   ~87% → messy-but-real (clean names, abbrevs, typos, ID-stuffed)
 
 _NORMAL_POOL: List[str] = [
-    # Clean-ish names (NOT exact canonical names — those go to clean_patients only)
+    # Clean-ish names 
     "Aetna", "Cigna", "UnitedHealthcare", "Humana",
     "Blue Cross Blue Shield of Illinois",
     "AmeriHealth", "Health Net",
@@ -193,9 +193,10 @@ def generate_patients_and_appointments(payer_master) :
 
         # Demographics
         patient_name = fake.name()
-        dob = fake.date_of_birth(minimum_age=5, maximum_age=85).strftime("%Y-%m-%d")
+        # minimum_age=13
+        dob = fake.date_of_birth(minimum_age=18, maximum_age=85).strftime("%Y-%m-%d")
 
-        # Appointment time: 08:00 – 17:00 today
+        # Appointment time: 08:00 – 17:00 today if weekday usual non urgent hours
         appt_dt = today.replace(
             hour=random.randint(8, 16),
             minute=random.choice([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 55]),
@@ -205,7 +206,7 @@ def generate_patients_and_appointments(payer_master) :
         member_id = _random_member_id() if random.random() < 0.75 else ""
 
 # Decide insurance_on_file — three-way weighted split
-        if random.random() < 0.25:
+        if random.random() < 0.25: #25% get perefectly clean data and insuracne name macthes
             # ~25% clean cases: exact canonical name so normalizer
             # hits instantly and rule engine marks them OK
             insurance_on_file = random.choice(canonical_names)
@@ -216,39 +217,11 @@ def generate_patients_and_appointments(payer_master) :
             # ~75% messy cases
             roll = random.random()
             if roll < 0.03:
-                insurance_on_file = np.nan
+                insurance_on_file = np.nan  # ~3% truly missing
             elif roll < 0.13:
-                insurance_on_file = random.choice(_AMBIGUOUS_POOL)
+                insurance_on_file = random.choice(_AMBIGUOUS_POOL) # ~10% genuinely ambiguous
             else:
-                insurance_on_file = random.choice(_NORMAL_POOL)
-        # # Insurance on file — weighted messy distribution
-        # roll = random.random()
-        # if roll < 0.02:
-        #     insurance_on_file = np.nan           # ~3%  truly missing
-        # elif roll < 0.10:
-        #     insurance_on_file = random.choice(_AMBIGUOUS_POOL)   # ~10% ambiguous
-        # else:
-        #     insurance_on_file = random.choice(_NORMAL_POOL)      # ~87% messy-real
-
-        # random.choice(_NORMAL_POOL)
-
-        # # ------------------------------------------------------------
-        # # FORCE ~20% CLEAN OK CASES
-        # # ------------------------------------------------------------
-        # if random.random() < 0.25:
-        #     # insurance_on_file = random.choice([
-        #     #     "Aetna", "Cigna", "UnitedHealthcare",
-        #     #     "Humana", "Blue Cross Blue Shield of Illinois"
-        #     # ])
-        #     # member_id = _random_member_id()
-        #     # clean_patients.add(patient_id)
-        #     row = payer_master.sample(1).iloc[0]
-        #     payer_code = row["payer_code"]
-
-        #     insurance_on_file = f"CLEAN::{payer_code}"
-        #     member_id = _random_member_id()
-
-        #     clean_patients.add(patient_id)
+                insurance_on_file = random.choice(_NORMAL_POOL) # ~87% messy-but-real
 
         appt_rows.append({
             "patient_id":           patient_id,
@@ -264,96 +237,6 @@ def generate_patients_and_appointments(payer_master) :
 
     return pd.DataFrame(patient_rows), pd.DataFrame(appt_rows), clean_patients
 
-
-# ============================================================
-# 3. Last-Check History (~175 rows, ~70% of patients)
-# ============================================================
-
-
-# def generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients):
-#     """
-#     Build eligibility check history covering ~70% of patients.
-
-#     Deliberately seeded mismatches to exercise triage rules:
-#       - 15 patients have a DIFFERENT member_id than appointments.csv
-#         → triggers Rule 3 "member ID changed"
-#       - 20 patients have a DIFFERENT payer_code than what is on file
-#         → triggers Rule 2 "payer changed"
-
-#     last_check_date is spread across the last 40 days (per spec),
-#     skewed so a realistic mix falls inside and outside the 30-day window.
-#     """
-
-#     today      = datetime.today().date()
-#     payer_codes = payer_master["payer_code"].tolist()
-
-#     all_patients   = patients_df["patient_id"].tolist()
-#     n_with_history = int(len(all_patients) * 0.70)  
-
-#     patients_with_history = random.sample(all_patients, n_with_history)
-
-#     # Pre-select mismatch patients (non-overlapping sets)
-#     changed_member_patients = set(random.sample(patients_with_history, 5))
-#     remaining               = [p for p in patients_with_history if p not in changed_member_patients]
-#     changed_payer_patients  = set(random.sample(remaining, 10))
-
-#     appt_member_id = dict(zip(patients_df["patient_id"], patients_df["member_id"]))
-
-#     rows = []
-
-#     for patient_id in patients_with_history:
-
-#         # if patient_id in clean_patients:
-#         #     payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-#         #     member_id = appt_member_id[patient_id]
-#         #     days_ago = random.randint(1, 10)
-#         #     last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-#         if patient_id in clean_patients:
-#     # Extract the CLEAN payer_code from appointments_df
-#             clean_value = appointments_df.loc[appointments_df["patient_id"] == patient_id, "insurance_on_file"].iloc[0]
-#             payer_code = clean_value.replace("CLEAN::", "").strip()
-#             member_id = appt_member_id[patient_id]
-
-#     # Fresh check → OK
-#             days_ago = random.randint(1, 10)
-#             last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-
-#         else:
-#             days_ago = random.randint(0, 25)
-#             last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-
-#             if random.random() < 0.70:
-#                 payer_code = payer_master.sample(1)["payer_code"].iloc[0]
-#             else:
-#                 payer_code = random.choice(payer_codes)
-
-#             original = appt_member_id.get(patient_id, "")
-#             if patient_id in changed_member_patients and original:
-#                 new_id = _random_member_id()
-#                 while new_id == original:
-#                     new_id = _random_member_id()
-#                 member_id = new_id
-#             else:
-#                 member_id = original
-
-#         result = random.choices(
-#             ["Active", "Inactive", "Unknown"],
-#             weights=[0.70, 0.20, 0.10],
-#             k=1,
-#         )[0]
-
-#         rows.append({
-#             "patient_id":     patient_id,
-#             "payer_code":     payer_code,
-#             "member_id":      member_id,
-#             "last_check_date": last_check_date,
-#             "result":         result,
-#         })
-
-#     return pd.DataFrame(rows)
-
 def generate_last_check_history(
     patients_df:     pd.DataFrame,
     appointments_df: pd.DataFrame,
@@ -364,47 +247,55 @@ def generate_last_check_history(
     today      = datetime.today().date()
     payer_codes = payer_master["payer_code"].tolist()
  
-    # Build lookup: patient_id → canonical_name used in appointments
-    # (used to find the correct payer_code for clean patients)
+    # Build dictionaries for easy of lookup
     canonical_to_code = dict(
         zip(payer_master["canonical_name"], payer_master["payer_code"])
-    )
+    ) #build a dictionary to map canonical name to payer code for quick lookup
     appt_insurance = dict(
         zip(appointments_df["patient_id"], appointments_df["insurance_on_file"])
-    )
+    ) #build a dictionary to map patient_id to insurance_on_file for quick lookup
     appt_member_id = dict(
         zip(patients_df["patient_id"], patients_df["member_id"])
-    )
+    ) #build a dictionary to map patient_id to member_id for quick lookup
  
-    all_patients      = patients_df["patient_id"].tolist()
-    n_with_history    = int(len(all_patients) * 0.70)   # 175
-    patients_with_history = random.sample(all_patients, n_with_history)
+    all_patients      = patients_df["patient_id"].tolist()#list of all patient ids
+
+    n_with_history    = int(len(all_patients) * 0.70)   #take 70% of all patients
+    patients_with_history = random.sample(all_patients, n_with_history) #give 70% of patients history
  
-    # Mismatch sets — only from non-clean patients so we don't
-    # accidentally break a patient that should be OK
-    non_clean = [p for p in patients_with_history if p not in clean_patients]
+
+    #list of patients with history but not in clean_patients
+    non_clean = [p for p in patients_with_history if p not in clean_patients]  
+    
+    #pick 15 rto have non clean mismatch member IDS
     changed_member_patients = set(random.sample(non_clean, min(15, len(non_clean))))
+
+    #list of patients with history but not in changed_member_patients
     remaining               = [p for p in non_clean if p not in changed_member_patients]
-    changed_payer_patients  = set(random.sample(remaining, min(20, len(remaining))))
+    
+    changed_payer_patients  = set(random.sample(remaining, min(20, len(remaining)))) 
+    #pick 20 to have non clean mismatch payer code
  
     rows = []
  
     for patient_id in patients_with_history:
- 
+        # For clean patients, we ensure the payer_code matches the canonical name in appointments_df,
         if patient_id in clean_patients:
             # Use the exact payer_code that matches the canonical name in appointments
             insurance_val = appt_insurance.get(patient_id, "")
             payer_code    = canonical_to_code.get(insurance_val, random.choice(payer_codes))
             member_id     = appt_member_id.get(patient_id, _random_member_id())
             # Fresh check — always within 10 days so it passes Rule 1
-            days_ago      = random.randint(1, 10)
+            days_ago      = random.randint(1, 20) 
+            #can be up to 30 days ago but we skew towards more recent checks to ensure a good mix of pass/fail for Rule 1
  
-        else:
+        else: # For non-clean patients, we introduce messiness and potential mismatches.
             # Normal case: spread over last 40 days
             days_ago   = random.randint(0, 40)
             payer_code = random.choice(payer_codes)
- 
+             #get the original member_id from appointments_df for this patient_id, default to empty string if not found
             original = appt_member_id.get(patient_id, "")
+            # If this patient is in the changed_member_patients set and has an original member_id, we generate a new random member_id that is different from the original to simulate a mismatch. Otherwise, we use the original member_id (which may be empty if not found).
             if patient_id in changed_member_patients and original:
                 # Different member_id → fires Rule 3
                 new_id = _random_member_id()
@@ -413,14 +304,13 @@ def generate_last_check_history(
                 member_id = new_id
             else:
                 member_id = original
- 
-        last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d")
- 
+        # Assign a last check date by subtracting today from days ago
+        last_check_date = (today - timedelta(days=days_ago)).strftime("%Y-%m-%d") 
         result = random.choices(
             ["Active", "Inactive", "Unknown"],
             weights=[0.70, 0.20, 0.10],
             k=1,
-        )[0]
+        )[0] #give a random result from three 3 only give 1 but with weighted results probability
  
         rows.append({
             "patient_id":      patient_id,
@@ -436,13 +326,14 @@ def generate_last_check_history(
 # ============================================================
 
 def main():
-    # Seeds are set at module level so generation order doesn't matter,
-    # but we re-affirm here for clarity.
+
+    # doin here again for clairty and recheck not needed
     random.seed(RANDOM_SEED)
     np.random.seed(RANDOM_SEED)
 
-    ensure_data_dir()
+    ensure_data_dir() #check directory for data exists and create if not
 
+    #initialize dataframers for 3 tables each with their own generation function
     payer_master                 = generate_payer_master()
     patients_df, appointments_df, clean_patients = generate_patients_and_appointments(payer_master)
     last_check_df                = generate_last_check_history(patients_df, appointments_df, payer_master, clean_patients)
