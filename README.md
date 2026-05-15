@@ -32,11 +32,11 @@ python src/run_all.py
 
 This will:
 
--Generate synthetic data
--Normalize payer names
--Apply eligibility rules
--Write data/appointments_final.csv
--Launch the Streamlit dashboard
+-Generate synthetic data <br/>
+-Normalize payer names <br/>
+-Apply eligibility rules <br/>
+-Write data/appointments_final.csv <br/>
+-Launch the Streamlit dashboard <br/>
 
 ### To Run the dashboard manually
 
@@ -48,20 +48,20 @@ streamlit run app.py
 
 The simulator generates three CSVs:
 
--payer_master.csv (~40 rows)
--appointments.csv (250 rows)
--last_check_history.csv (~175 rows)
+-payer_master.csv (~40 rows) <br/>
+-appointments.csv (250 rows) <br/>
+-last_check_history.csv (~175 rows) <br/>
 
-The simulator intentionally includes:
--Typos
--Abbreviations
--Member‑ID‑stuffed strings
--Missing values
--Ambiguous values
--High‑turnover payers
--Payer mismatches
--Member ID mismatches
--Fresh vs stale last‑check dates
+The simulator intentionally includes: <br/>
+-Typos <br/>
+-Abbreviations <br/>
+-Member‑ID‑stuffed strings <br/>
+-Missing values <br/>
+-Ambiguous values <br/>
+-High‑turnover payers <br/>
+-Payer mismatches <br/>
+-Member ID mismatches <br/>
+-Fresh vs stale last‑check dates <br/>
 
 #### CLEAN:: tags (key design choice)
 
@@ -69,10 +69,10 @@ To guarantee a realistic OK bucket, ~25% of appointments are marked:
 
 CLEAN::<payer_code>
 
-These bypass normalization entirely and ensure:
--payer_code matches history
--member_id matches
--last_check_date < 10 days
+These bypass normalization entirely and ensure: <br/>
+-payer_code matches history <br/>
+-member_id matches <br/>
+-last_check_date < 10 days <br/>
 
 This produces a stable OK bucket (~20%).
 
@@ -88,17 +88,17 @@ Normalization follows a deterministic‑first strategy:
 7. Pydantic validation
 
 ### LLM usage
--Only used when deterministic logic fails
--Cached to avoid repeated calls
--Hard cap of 30 calls
--Total cost: $0 (OpenRouter free tier)
+*Only used when deterministic logic fails <br/>
+*Cached to avoid repeated calls <br/>
+*Hard cap of 30 calls <br/>
+*Total cost: $0 (OpenRouter free tier) <br/>
 
 ### CLEAN:: bypass
-If the simulator emits CLEAN::AETNA_COMM, normalization returns:
--payer_code = AETNA_COMM
--confidence = 1.0
--method = exact
-
+If the simulator emits CLEAN::AETNA_COMM, normalization returns: <br/>
+-payer_code = AETNA_COMM <br/>
+-confidence = 1.0 <br/>
+-method = exact <br/>
+ 
 No fuzzy, no alias, no LLM.
 
 ### 3.3 Rule Engine
