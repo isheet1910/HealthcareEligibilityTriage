@@ -13,20 +13,20 @@ This project builds a reproducible pipeline that:
 1. Simulates realistic messy healthcare data
 2. Normalizes payer names using deterministic logic first, then LLM fallback
 3. Applies the five business rules in strict order
-4. Surfaces results in a Streamlit dashboard with three buckets:
-🔴 Re‑check needed
-🟢 OK
-🟡 Unknown
+4. Surfaces results in a Streamlit dashboard with three buckets: <br/>
+- 🔴 Re‑check needed
+- 🟢 OK
+- 🟡 Unknown
 
 The entire pipeline is deterministic (SEED=42), reproducible, and runs in seconds.
 
 ## 2. How to Run
 
-Install dependencies
+###Install dependencies
 
 pip install -r requirements.txt
 
-Run the full pipeline
+###Run the full pipeline
 
 python src/run_all.py
 
@@ -192,8 +192,8 @@ Deterministic logic resolves ~75% of rows.
 - Added member‑ID‑stuffed strings to simulate real front‑desk behavior
 
 ## 9. Hours Log (Honest)
-| **Phase** |	**Hours **|
-|:------: |:----------:|
+| **Phase** |	**Hours**|
+| :------: | :----------: |
 | Data simulator |	4 |
 | Normalization pipeline |	5 |
 | Rule engine	| 2 |
@@ -201,8 +201,8 @@ Deterministic logic resolves ~75% of rows.
 | Debugging + tuning |	5 |
 | Tests	| 1 |
 | README |	2 |
-| :----:|:-------:|
-| **Total**	|** 20 hours** |
+| :----: | :-------: |
+| **Total**	| **20 hours** |
 
 
 ## 10. Tools & Agents Used
