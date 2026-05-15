@@ -120,13 +120,41 @@ Implements the five business rules in strict order:
 If none match → OK  
 If payer cannot be identified → Unknown
 
-### Confidence threshold (Rule 5)
+### Confidence threshold (Rule 5) & Operational Reasoning
 
-I chose 0.70, based on the operational asymmetry:
+One of the key judgment calls in this project is Rule 5, which triggers a re‑check when the payer normalization confidence falls below a threshold. The spec intentionally leaves this open, and Girish’s feedback clarified the operational context needed to make a defensible choice.
+
+Why the threshold matters less than the reasoning
+
+In this pipeline, the deterministic stages i.e.  cleaning, alias dictionary, exact match, and fuzzy match — already resolve the majority of payer names with high confidence. Only a small minority of rows fall through to the LLM fallback. Because of that, the exact numeric threshold is less important than the logic behind it. What matters is demonstrating an understanding of the workflow’s asymmetry and choosing a threshold that aligns with real operational risk.
+
+The operational asymmetry
+
+I chose 0.80, based on the operational asymmetry:
 - False positive (extra re‑check): 5–10 minutes
 - False negative (missed eligibility change): denied claim, patient friction, revenue loss
 
+The cost of a false positive (re‑checking when it wasn’t needed) is small:
+- 5–10 minutes of coordinator time
+- A quick payer portal lookup or phone call
+
+The cost of a false negative (missing an eligibility change) is much larger:
+- Denied claim
+- Patient frustration at the front desk
+- Potential loss of visit revenue
+
 Because false negatives are far more costly, the system leans toward more re‑checks, not fewer.
+
+###Chosen threshold: 0.80
+
+I selected 0.80 as the confidence threshold for Rule 5.
+
+This value reflects the operational asymmetry:
+- Anything below 70% confidence means the system is not reliably sure which payer the patient has
+- If we don’t know the payer, we can’t even begin to verify eligibility
+- That uncertainty alone is enough to justify a re‑check
+
+This threshold also aligns with the fuzzy‑matching behavior: most fuzzy matches above 0.75 are strong, while those below 0.70 tend to be unreliable or ambiguous.
 
 ### 3.4 Streamlit Dashboard
 
@@ -182,14 +210,16 @@ All tests pass:
 
 Deterministic logic resolves ~75% of rows.
 
-## 7. What I’d Improve With More Time
+## 7. What I’d Improve With More Time or in production
 
+- Coordinator feedback on false positives
+- Add Dockerfile for reproducible deployment
+- Add historical trend dashboard
 - Add a feature store for alias learning
 - Add confidence calibration using real operational data
 - Add unit tests for normalization
 - Add CI/CD with GitHub Actions
-- Add Dockerfile for reproducible deployment
-- Add historical trend dashboard
+
 
 ## 8. What Changed From the Spec
 
