@@ -94,5 +94,17 @@
     "payer_code": "MERIDIAN",
     "confidence": 0.78,
     "method": "llm"
+  },
+  "bcbs il hmo": {
+    "normalized_payer": "BCBS Illinois HMO",
+    "payer_code": "BCBS_IL_HMO",
+    "confidence": 0.78,
+    "method": "llm"
+  },
+  "unitedhealthcare choice plus": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.25,
+    "method": "llm_empty_response"
   }
 }

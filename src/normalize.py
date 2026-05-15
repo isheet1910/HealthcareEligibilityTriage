@@ -66,7 +66,7 @@ LLM_CALL_COUNT = 0         # incremented in _llm_fallback
 DATA_DIR           = "data"
 LLM_CACHE_PATH     = os.path.join(DATA_DIR, "llm_cache.json")
 LLM_MODEL          = "openrouter/free"
-LOW_CONF_THRESHOLD = 0.70
+LOW_CONF_THRESHOLD = 0.80
 FUZZY_THRESHOLD    = 75
 
 # ============================================================
@@ -103,7 +103,7 @@ class NormResult(BaseModel):
     ------
     normalized_payer : Human-readable canonical name, or None if unresolved.
     payer_code       : Short code used for rule comparisons, or None.
-    confidence       : Float in [0, 1]. The rule engine uses 0.70 as its threshold.
+    confidence       : Float in [0, 1]. The rule engine uses 0.80 as its threshold.
     method           : How the match was made. Used in the UI pipeline summary.
     """
 

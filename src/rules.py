@@ -34,7 +34,7 @@ import pandas as pd
 
 STALE_DAYS_DEFAULT   = 30    # Rule 1 threshold
 STALE_DAYS_HIGH_TURN = 14    # Rule 4 threshold
-LOW_CONF_THRESHOLD   = 0.70  # Rule 5 threshold
+LOW_CONF_THRESHOLD   = 0.80  # Rule 5 threshold
 
 # ============================================================
 # Pre-computation helpers

@@ -140,7 +140,7 @@ min_confidence = st.sidebar.slider(
     "Minimum confidence",
     min_value=0.0,
     max_value=1.0,
-    value=0.0,
+    value=0.80,
     step=0.05,
     help="Filter out rows where the payer match confidence is below this value.",
 )
