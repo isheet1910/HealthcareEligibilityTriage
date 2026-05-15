@@ -27,6 +27,10 @@ The entire pipeline is deterministic (SEED=42), reproducible, and runs in second
 pip install -r requirements.txt
 ```
 
+### Activate the environment
+```
+ .\venv\Scripts\activate
+```
 ### Run the full pipeline
 
 ```
