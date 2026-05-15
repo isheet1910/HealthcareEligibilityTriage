@@ -37,7 +37,7 @@ pip install -r requirements.txt
 python src/run_all.py
 ```
 
-This will:
+This will run all four steps in sequence and launches the dashboard:
 
 - Generate synthetic data <br/>
 - Normalize payer names <br/>
@@ -50,6 +50,9 @@ This will:
 ```
 streamlit run app.py
 ```
+
+Requires OPENROUTER_API_KEY in a .env file at the repo root.
+Get a free key at https://openrouter.ai — the free tier is sufficient for this project.
 
 ## 3. Architecture
 
@@ -72,20 +75,16 @@ The simulator intentionally includes: <br/>
 - Member ID mismatches <br/>
 - Fresh vs stale last‑check dates <br/>
 
-#### CLEAN:: tags (key design choice)
 
-To guarantee a realistic OK bucket, ~25% of appointments are marked:
 
-```
-CLEAN::<payer_code>
-```
+The insurance_on_file column intentionally contains the full spectrum of real front-desk messiness: clean names, abbreviations (BCBSIL), plan tiers (BCBS IL PPO), embedded member IDs (BCBSIL #MBR12345),
+typos (Humanna, Blue Cros Blu Sheild IL), missing values, and genuinely ambiguous entries (self-pay, ??, BCBS / Aetna).
+About 25% of patients are seeded as "clean OK" cases: their insurance_on_file is set to the exact canonical name from payer_master.csv, and their history record uses the matching
+payer_code with a fresh check date (1–10 days ago). This ensures the dashboard always has a populated OK bucket for demonstration. The other 75% exercise the normalization pipeline and rule engine fully.
+The history table deliberately seeds mismatches to exercise the rules:
 
-These bypass normalization entirely and ensure: <br/>
-- payer_code matches history <br/>
-- member_id matches <br/>
-- last_check_date < 10 days <br/>
-
-This produces a stable OK bucket (~20%).
+15 patients have a different member_id than their appointment → fires Rule 3
+20 patients have a different payer_code → fires Rule 2
 
 ### 3.2 Payer Normalization Pipeline
 
@@ -104,13 +103,10 @@ Normalization follows a deterministic‑first strategy:
 * Hard cap of 30 calls <br/>
 * Total cost: $0 (OpenRouter free tier) <br/>
 
-### CLEAN:: bypass
-If the simulator emits CLEAN::AETNA_COMM, normalization returns: <br/>
-- payer_code = AETNA_COMM <br/>
-- confidence = 1.0 <br/>
-- method = exact <br/>
- 
-No fuzzy, no alias, no LLM.
+Why deterministic first: The alias dictionary and exact match handle 84% of rows in the test run with zero API calls and instant results.
+Fuzzy handles another 5%. The LLM sees only the genuinely hard cases typically 10–15 unique strings per run — and those results are cached to data/llm_cache.json so subsequent runs cost nothing.
+Pydantic validation: Every normalizer output is a NormalizationResult model with confidence: float = Field(ge=0.0, le=1.0) and a Literal type for method. If the LLM returns a confidence value outside [0, 1]
+or an unrecognised method string, Pydantic raises at the boundary rather than letting bad data propagate to the rule engine.
 
 ### 3.3 Rule Engine
 
