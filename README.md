@@ -23,12 +23,15 @@ The entire pipeline is deterministic (SEED=42), reproducible, and runs in second
 ## 2. How to Run
 
 ### Install dependencies
-
+```
 pip install -r requirements.txt
+```
 
 ### Run the full pipeline
 
+```
 python src/run_all.py
+```
 
 This will:
 
@@ -40,7 +43,9 @@ This will:
 
 ### To Run the dashboard manually
 
+```
 streamlit run app.py
+```
 
 ## 3. Architecture
 
@@ -67,7 +72,9 @@ The simulator intentionally includes: <br/>
 
 To guarantee a realistic OK bucket, ~25% of appointments are marked:
 
+```
 CLEAN::<payer_code>
+```
 
 These bypass normalization entirely and ensure: <br/>
 - payer_code matches history <br/>
@@ -162,8 +169,9 @@ Covers:
 
 All tests pass:
 
-
+```
 5 passed in 1.02s
+```
 
 
 ## 6. LLM Cost Accounting
