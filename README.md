@@ -22,11 +22,11 @@ The entire pipeline is deterministic (SEED=42), reproducible, and runs in second
 
 ## 2. How to Run
 
-###Install dependencies
+### Install dependencies
 
 pip install -r requirements.txt
 
-###Run the full pipeline
+### Run the full pipeline
 
 python src/run_all.py
 
