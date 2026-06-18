@@ -1,0 +1,14 @@
+{
+  "anthem gold plan": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.0,
+    "method": "llm_error"
+  },
+  "meridian": {
+    "normalized_payer": null,
+    "payer_code": null,
+    "confidence": 0.0,
+    "method": "llm_error"
+  }
+}
